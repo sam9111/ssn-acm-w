@@ -1,0 +1,23 @@
+{
+  "name": "ssn-acm-w",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ssn-acm-w",
+  "author": "sam9111",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "gatsby": "^3.10.2",
+    "gatsby-plugin-gatsby-cloud": "^2.10.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  }
+}
