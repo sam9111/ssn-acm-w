@@ -13,6 +13,7 @@ import {
   Link,
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon, ChevronDownIcon } from "@chakra-ui/icons";
+import { Link as ReachLink } from "gatsby";
 
 export default function Header() {
   const { isOpen, onToggle } = useDisclosure();
@@ -75,7 +76,8 @@ const DesktopNav = () => {
         <Box key={navItem.tab}>
           <Link
             pr={10}
-            to={"/${navItem.tab}"}
+            as={ReachLink}
+            to={"/" + navItem.tab}
             fontSize={"lg"}
             fontWeight={500}
             color={linkColor}
