@@ -12,6 +12,7 @@ import {
   useDisclosure,
   Link,
   Spacer,
+  Img,
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon, ChevronDownIcon } from "@chakra-ui/icons";
 import { Link as ReachLink } from "gatsby";
@@ -47,13 +48,12 @@ export default function Header() {
           />
         </Flex>
         <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
-          <Text
-            textAlign={useBreakpointValue({ base: "center", md: "left" })}
-            color={useColorModeValue("gray.800", "white")}
+          <Box
+            mr={"auto"}
+            align={useBreakpointValue({ base: "center", md: "left" })}
           >
-            Logo
-          </Text>
-
+            <Img src={"/images/acmw-logo.png"} height={12} width={12} />
+          </Box>
           <Flex display={{ base: "none", md: "flex" }} m={"auto"}>
             <DesktopNav />
           </Flex>
@@ -68,7 +68,7 @@ export default function Header() {
 }
 
 const DesktopNav = () => {
-  const linkColor = useColorModeValue("black.600", "black.200");
+  const linkColor = useColorModeValue("gray.600", "gray.200");
   const linkHoverColor = useColorModeValue("gray.800", "white");
 
   return (
