@@ -17,6 +17,8 @@ import {
 import { HamburgerIcon, CloseIcon, ChevronDownIcon } from "@chakra-ui/icons";
 import { Link as ReachLink } from "gatsby";
 import ThemeToggle from "./Toggle-Theme";
+import acmw_logo from "../images/acmw_logo.png";
+
 
 export default function Header() {
   const { isOpen, onToggle } = useDisclosure();
@@ -51,7 +53,7 @@ export default function Header() {
         <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
           <Box align={useBreakpointValue({ base: "center", md: "left" })}>
             <ReachLink to={"/"}>
-              <Img src={"/images/acmw-logo.png"} height={12} width={12} />
+              <Img src={acmw_logo} height={12} width={12} />
             </ReachLink>
           </Box>
           <Flex display={{ base: "none", md: "flex" }} m={"auto"}>
