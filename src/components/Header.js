@@ -16,6 +16,7 @@ import {
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon, ChevronDownIcon } from "@chakra-ui/icons";
 import { Link as ReachLink } from "gatsby";
+import ThemeToggle from "./Toggle-Theme";
 
 export default function Header() {
   const { isOpen, onToggle } = useDisclosure();
@@ -57,6 +58,9 @@ export default function Header() {
             <DesktopNav />
           </Flex>
         </Flex>
+        <Box right="20px" top="20px">
+          <ThemeToggle />
+        </Box>
       </Flex>
 
       <Collapse in={isOpen} animateOpacity>
