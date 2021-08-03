@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@chakra-ui/gatsby-plugin": "^2.0.1",
+    "@chakra-ui/icons": "^1.0.14",
     "@chakra-ui/react": "^1.6.5",
     "@emotion/react": "^11.4.0",
     "@emotion/styled": "^11.3.0",
@@ -23,6 +24,7 @@
     "framer-motion": "^4.1.17",
     "gatsby": "^3.10.2",
     "gatsby-plugin-gatsby-cloud": "^2.10.1",
+    "gatsby-plugin-wrap-pages": "^1.0.4",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },
