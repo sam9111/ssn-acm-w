@@ -47,3 +47,5 @@
     - https://chakra-ui.com/
     - https://choc-ui.tech/
     - https://chakra-templates.dev/
+6. **Designs**
+    https://www.figma.com/file/GQwthw0joF9py0oQMHZymS/Website?node-id=0%3A1
