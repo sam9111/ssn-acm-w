@@ -11,6 +11,7 @@ import {
   useBreakpointValue,
   useDisclosure,
   Link,
+  Spacer,
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon, ChevronDownIcon } from "@chakra-ui/icons";
 import { Link as ReachLink } from "gatsby";
@@ -53,7 +54,7 @@ export default function Header() {
             Logo
           </Text>
 
-          <Flex display={{ base: "none", md: "flex" }} ml={10}>
+          <Flex display={{ base: "none", md: "flex" }} m={"auto"}>
             <DesktopNav />
           </Flex>
         </Flex>
@@ -67,19 +68,18 @@ export default function Header() {
 }
 
 const DesktopNav = () => {
-  const linkColor = useColorModeValue("gray.600", "gray.200");
+  const linkColor = useColorModeValue("black.600", "black.200");
   const linkHoverColor = useColorModeValue("gray.800", "white");
 
   return (
-    <Stack direction={"row"} spacing={4}>
+    <Flex direction={"row"}>
       {NAV_ITEMS.map((navItem) => (
-        <Box key={navItem.tab}>
+        <Box key={navItem.tab} px="20">
           <Link
-            pr={10}
             as={ReachLink}
             to={"/" + navItem.tab}
             fontSize={"lg"}
-            fontWeight={500}
+            fontWeight={600}
             color={linkColor}
             _hover={{
               textDecoration: "none",
@@ -88,9 +88,10 @@ const DesktopNav = () => {
           >
             {navItem.label}
           </Link>
+          <Spacer />
         </Box>
       ))}
-    </Stack>
+    </Flex>
   );
 };
 
