@@ -1,12 +1,13 @@
 import React from "react";
 import Header from "../components/Header.js";
-
+import "@fontsource/josefin-sans";
+import { Box, Center } from "@chakra-ui/react";
 
 export default function Layout({ children }) {
   return (
-    <div>
+    <Box>
       <Header />
-      {children}
-    </div>
+      <Center bg={"#F0FAFF"}>{children}</Center>
+    </Box>
   );
 }

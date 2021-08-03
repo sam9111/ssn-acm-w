@@ -48,11 +48,10 @@ export default function Header() {
           />
         </Flex>
         <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
-          <Box
-            mr={"auto"}
-            align={useBreakpointValue({ base: "center", md: "left" })}
-          >
-            <Img src={"/images/acmw-logo.png"} height={12} width={12} />
+          <Box align={useBreakpointValue({ base: "center", md: "left" })}>
+            <ReachLink to={"/"}>
+              <Img src={"/images/acmw-logo.png"} height={12} width={12} />
+            </ReachLink>
           </Box>
           <Flex display={{ base: "none", md: "flex" }} m={"auto"}>
             <DesktopNav />
