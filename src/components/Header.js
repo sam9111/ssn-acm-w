@@ -175,8 +175,8 @@ const NAV_ITEMS = [
     tab: "team",
   },
   {
-    label: "Gallery",
-    tab: "gallery",
+    label: "Yearbook",
+    tab: "yearbook",
   },
   {
     label: "Blog",
