@@ -1,12 +1,8 @@
-import React from "react";
-import { Box, Button } from "@chakra-ui/react";
+import React from 'react';
+import { Box, Button } from '@chakra-ui/react';
 
 function ContactPage() {
-  return (
-      <Box>
-       Contact
-      </Box>
-  );
+  return <Box>Contact</Box>;
 }
 
 export default ContactPage;
