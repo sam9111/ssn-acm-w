@@ -19,7 +19,6 @@ import { Link as ReachLink } from "gatsby";
 import ThemeToggle from "./Toggle-Theme";
 import acmw_logo from "../images/acmw_logo.png";
 
-
 export default function Header() {
   const { isOpen, onToggle } = useDisclosure();
 
