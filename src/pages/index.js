@@ -3,7 +3,7 @@ import React from "react";
 import { Box, Button } from "@chakra-ui/react";
 
 function IndexPage() {
-  return <Box>Home</Box>;
+  return <Box>Index</Box>;
 }
 
 export default IndexPage;
