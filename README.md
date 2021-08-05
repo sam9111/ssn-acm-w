@@ -47,3 +47,12 @@
     - https://chakra-ui.com/
     - https://choc-ui.tech/
     - https://chakra-templates.dev/
+
+📢 Here is a note,
+
+You can run eslint in two ways,
+1. Kinda hard but the **best way**
+If you using CS code install the extension [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode), [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) and configure it. So, eslint applied in each save of your file
+
+2. Easy way
+Make sure to the command `npm run lint` before every commit you make.
