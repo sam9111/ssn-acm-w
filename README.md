@@ -51,6 +51,8 @@
 
 📢 Here is a note,
 
+We prefer you to use VS Code.
+
 You can run eslint in two ways,
 1. Kinda hard but the **best way**
    
