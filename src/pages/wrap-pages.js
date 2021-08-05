@@ -6,4 +6,4 @@ export function wrapPages({ element }) {
   return <Layout>{element}</Layout>;
 }
 
-export default NotFoundPage
+export default NotFoundPage;
