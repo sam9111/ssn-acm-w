@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "lib": ["dom"],
+    // allow a partial TypeScript and JavaScript codebase
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    // ensure that casing is correct in imports - error when import casing doesn't match with the file on disk
+    "forceConsistentCasingInFileNames": true,
+    // never want to forget a break statement between cases in a switch block
+    "noFallthroughCasesInSwitch": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    // do not emit compiler output files like JS source code, source-maps or declarations
+    "noEmit": true,
+    // emit .js files with the JSX changed to _jsx calls in React 17 instead of React.createElement
+    "jsx": "preserve",
+    // strips all comments from TS files when converting into JS
+    "removeComments": true
+  },
+  "include": [
+    "src",
+  ],
+  "exclude": ["node_modules", ".git", ".vscode", ".cache", "public" ]
+}
