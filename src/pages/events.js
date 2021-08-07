@@ -1,10 +1,9 @@
 // src/pages/Events.js
-// src/pages/Events.js
-import React from "react";
+import React, { Component } from "react";
 import { Heading, useColorModeValue } from "@chakra-ui/react";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 import { Box, Text } from "@chakra-ui/react";
-
+import Current from "../components/Current";
 function Events() {
   return (
     <Box>
@@ -29,12 +28,15 @@ function Events() {
             </Text>
           </Tab>
         </TabList>
+        <br></br>
         <TabPanels>
           <TabPanel>
-            <p>Past</p>
+            <p style={{ align: "left" }}>Past</p>
           </TabPanel>
           <TabPanel>
-            <p>Present</p>
+            <div>
+              <Current />
+            </div>
           </TabPanel>
           <TabPanel>
             <p>Upcoming</p>
