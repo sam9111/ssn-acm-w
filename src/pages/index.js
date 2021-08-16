@@ -71,7 +71,7 @@ function IndexPage() {
             w={"full"}
           >
             <Center
-              bg="white"
+              bg={useColorModeValue("white", "gray.800")}
               position={"relative"}
               borderRadius={"3xl"}
               boxShadow={"lg"}
@@ -106,7 +106,7 @@ function IndexPage() {
         w={"full"}
       >
         <Center
-          bg="white"
+          bg={useColorModeValue("white", "gray.800")}
           position={"relative"}
           borderRadius={"3xl"}
           boxShadow={"lg"}
@@ -153,7 +153,7 @@ function IndexPage() {
           w={"full"}
         >
           <Center
-            bg="white"
+            bg={useColorModeValue("white", "gray.800")}
             position={"relative"}
             borderRadius={"3xl"}
             boxShadow={"lg"}
@@ -195,7 +195,7 @@ function IndexPage() {
           w={"full"}
         >
           <Center
-            bg="white"
+            bg={useColorModeValue("white", "gray.800")}
             position={"relative"}
             borderRadius={"3xl"}
             boxShadow={"lg"}
@@ -237,7 +237,7 @@ function IndexPage() {
           w={"full"}
         >
           <Center
-            bg="white"
+            bg={useColorModeValue("white", "gray.800")}
             position={"relative"}
             borderRadius={"3xl"}
             boxShadow={"lg"}

@@ -7,7 +7,7 @@ export default function Layout({ children }) {
   return (
     <Box>
       <Header />
-      <Center bg={useColorModeValue("#F0FAFF", "gray.800")}>{children}</Center>
+      <Center bg={useColorModeValue("#F0FAFF", "gray.900")}>{children}</Center>
     </Box>
   );
 }
