@@ -49,7 +49,7 @@ function TeamPage() {
       <Stack
         justify="center"
         align={"center"}
-        spacing={{ base: 20, md: 40 }}
+        spacing="140px"
         pb={{ base: 10, md: 14 }}
         direction={{ base: "column", md: "row" }}
       >
