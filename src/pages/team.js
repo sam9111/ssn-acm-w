@@ -1,15 +1,13 @@
 import React from "react";
 import {
   Box,
-  Button,
   Flex,
-  Heading,
   Spacer,
   Center,
-  Square,
   Wrap,
   WrapItem,
   Avatar,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import { Text } from "@chakra-ui/react";
 //import avatar from "../images/avatar.svg";
@@ -48,13 +46,21 @@ function TeamPage() {
       </Flex>
       <Flex>
         <Box ml="416px" w="290px" h="27px" mt="19px">
-          <Text fontSize="24px" lineHeight="24px" color="#3F3F3F">
+          <Text
+            fontSize="24px"
+            lineHeight="24px"
+            color={useColorModeValue("#3F3F3F", "#909090")}
+          >
             Head of Department, CSE
           </Text>
         </Box>
         <Spacer />
         <Box mr="355px" w="281px" h="27px" mt="19px">
-          <Text fontSize="24px" lineHeight="24px" color="#3F3F3F">
+          <Text
+            fontSize="24px"
+            lineHeight="24px"
+            color={useColorModeValue("#3F3F3F", "#909090")}
+          >
             Faculty Sponsor
           </Text>
         </Box>
@@ -101,7 +107,11 @@ function TeamPage() {
 
       <Flex>
         <Box ml="129px" w="202px" h="27px" mt="19px">
-          <Text fontSize="24px" lineHeight="24px" color="#3F3F3F">
+          <Text
+            fontSize="24px"
+            lineHeight="24px"
+            color={useColorModeValue("#3F3F3F", "#909090")}
+          >
             Chairperson
           </Text>
         </Box>
@@ -113,13 +123,21 @@ function TeamPage() {
         </Box>
         <Spacer />
         <Box ml="75px" w="104px" h="27px" mt="19px">
-          <Text fontSize="24px" lineHeight="24px" color="#3F3F3F">
+          <Text
+            fontSize="24px"
+            lineHeight="24px"
+            color={useColorModeValue("#3F3F3F", "#909090")}
+          >
             Secretary
           </Text>
         </Box>
         <Spacer />
         <Box mr="120px" w="200px" h="27px" mt="19px">
-          <Text fontSize="24px" lineHeight="24px" color="#3F3F3F">
+          <Text
+            fontSize="24px"
+            lineHeight="24px"
+            color={useColorModeValue("#3F3F3F", "#909090")}
+          >
             Joint Secretary
           </Text>
         </Box>
@@ -127,7 +145,11 @@ function TeamPage() {
 
       <Flex>
         <Box ml="600px" w="202px" h="27px" mt="12px">
-          <Text fontSize="24px" lineHeight="24px" color="#3F3F3F">
+          <Text
+            fontSize="24px"
+            lineHeight="24px"
+            color={useColorModeValue("#3F3F3F", "#909090")}
+          >
             Vice Chairperson
           </Text>
         </Box>
@@ -174,7 +196,11 @@ function TeamPage() {
 
       <Flex>
         <Box ml="129px" w="202px" h="27px" mt="19px">
-          <Text fontSize="24px" lineHeight="24px" color="#3F3F3F">
+          <Text
+            fontSize="24px"
+            lineHeight="24px"
+            color={useColorModeValue("#3F3F3F", "#909090")}
+          >
             Chief Editor
           </Text>
         </Box>
@@ -186,7 +212,11 @@ function TeamPage() {
         </Box>
         <Spacer />
         <Box ml="160px" w="202px" h="27px" mt="19px">
-          <Text fontSize="24px" lineHeight="24px" color="#3F3F3F">
+          <Text
+            fontSize="24px"
+            lineHeight="24px"
+            color={useColorModeValue("#3F3F3F", "#909090")}
+          >
             Event Head
           </Text>
         </Box>
@@ -200,13 +230,21 @@ function TeamPage() {
 
       <Flex>
         <Box ml="630px" w="202px" h="27px" mt="12px">
-          <Text fontSize="24px" lineHeight="24px" color="#3F3F3F">
+          <Text
+            fontSize="24px"
+            lineHeight="24px"
+            color={useColorModeValue("#3F3F3F", "#909090")}
+          >
             Design Head
           </Text>
         </Box>
         <Spacer />
         <Box mr="117px" w="202px" h="27px" mt="12px">
-          <Text fontSize="24px" lineHeight="24px" color="#3F3F3F">
+          <Text
+            fontSize="24px"
+            lineHeight="24px"
+            color={useColorModeValue("#3F3F3F", "#909090")}
+          >
             Public Relations
           </Text>
         </Box>
