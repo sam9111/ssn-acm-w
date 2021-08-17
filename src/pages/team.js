@@ -49,14 +49,17 @@ function TeamPage() {
       <Stack
         justify="center"
         align={"center"}
-        spacing="140px"
-        pb={{ base: 10, md: 14 }}
+        spacing={{ base: "80px", md: "140px" }}
         direction={{ base: "column", md: "row" }}
       >
         <GridItem />
         <GridItem />
       </Stack>
-      <SimpleGrid minChildWidth="240px" spacing="80px">
+      <SimpleGrid
+        py={{ base: 10, md: 14 }}
+        minChildWidth="240px"
+        spacing="80px"
+      >
         <GridItem />
         <GridItem />
         <GridItem />
