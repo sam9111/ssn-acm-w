@@ -16,6 +16,7 @@
     "lint": "eslint . --fix"
   },
   "dependencies": {
+    "@apollo/client": "^3.2.9",
     "@chakra-ui/gatsby-plugin": "^2.0.1",
     "@chakra-ui/icons": "^1.0.14",
     "@chakra-ui/react": "^1.6.5",
@@ -26,11 +27,12 @@
     "gatsby": "^3.10.2",
     "gatsby-plugin-gatsby-cloud": "^2.10.1",
     "gatsby-plugin-wrap-pages": "^1.0.4",
+    "gatsby-source-graphql": "^3.11.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "^7.14.9",
+    "@babel/eslint-parser": "^7.15.0",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
