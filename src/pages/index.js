@@ -7,7 +7,7 @@ import HomeCard from "../components/HomeCard.js";
 
 function IndexPage() {
   return (
-    <Container maxW={"7xl"}>
+    <Box>
       <Stack
         align={"center"}
         spacing={{ base: 8, md: 10 }}
@@ -64,7 +64,7 @@ function IndexPage() {
         <HomeCard />
         <HomeCard />
       </Stack>
-    </Container>
+    </Box>
   );
 }
 export default IndexPage;
