@@ -8,18 +8,19 @@ import {
   Heading,
   Stack,
 } from "@chakra-ui/react";
-//import avatar from "../images/avatar.svg";
+import { graphql, useStaticQuery } from "gatsby";
 
 function GridItem(props) {
+  const { name, image, position } = props;
   return (
     <Center flexDirection="column" p={"auto"}>
-      <Avatar size="2xl" />
+      <Avatar size="2xl" src={image} />
       <Text
         fontWeight={"bold"}
         fontSize={{ base: "lg", sm: "xl", lg: "2xl" }}
         py={{ base: 3, md: 4 }}
       >
-        Dr. K. Madheswari
+        {name}
       </Text>
       <Text
         fontWeight={"thin"}
@@ -27,12 +28,29 @@ function GridItem(props) {
         position={"relative"}
         fontSize={{ base: "sm", sm: "md", lg: "lg" }}
       >
-        Our Team
+        {position}
       </Text>
     </Center>
   );
 }
 function TeamPage() {
+  const { currentTeamMembers } = useStaticQuery(graphql`
+    {
+      currentTeamMembers: allGraphCmsTeamMember(
+        filter: { currentMember: { eq: true } }
+      ) {
+        nodes {
+          name
+          position
+          image {
+            url
+            height
+            width
+          }
+        }
+      }
+    }
+  `);
   return (
     <Box>
       <Box py={{ base: 10, md: 14 }} align={"center"}>
@@ -60,14 +78,13 @@ function TeamPage() {
         minChildWidth="240px"
         spacing="80px"
       >
-        <GridItem />
-        <GridItem />
-        <GridItem />
-        <GridItem />
-        <GridItem />
-        <GridItem />
-        <GridItem />
-        <GridItem />
+        {currentTeamMembers.nodes.map((currentTeamMember) => (
+          <GridItem
+            name={currentTeamMember.name}
+            image={currentTeamMember.image.url}
+            position={currentTeamMember.position}
+          />
+        ))}
       </SimpleGrid>
     </Box>
   );
