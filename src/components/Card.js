@@ -1,6 +1,4 @@
-import React, { Component } from "react";
-//import "./Card.css";
-import vvcoding from "../images/vvvcoding.svg";
+import React from "react";
 import { chakra, Box, Flex, useColorModeValue, Link } from "@chakra-ui/react";
 function Card({ title, imageImport, body, watch }) {
   return (

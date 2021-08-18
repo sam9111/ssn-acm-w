@@ -1,9 +1,9 @@
 // src/pages/Events.js
 import React from "react";
 import { Heading, useColorModeValue } from "@chakra-ui/react";
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import { Tab, Tabs, TabList } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
-import { Box, Button, Flex, Spacer, Link } from "@chakra-ui/react";
+import { Box, Spacer, Link } from "@chakra-ui/react";
 import { Link as ReachLink } from "gatsby";
 
 function EventHeader() {

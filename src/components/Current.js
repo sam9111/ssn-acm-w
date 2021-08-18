@@ -1,8 +1,7 @@
 import React from "react";
 import Card from "./Card";
 import vvcoding from "../images/vvvcoding.svg";
-import carrer from "../images/careertalk.png";
-import { Center } from "@chakra-ui/react";
+import career from "../images/careertalk.png";
 function Current() {
   return (
     <flex>
@@ -13,10 +12,10 @@ function Current() {
           body="By Vrishin Vigneshwar SDE @Motorq"
           watch="Watch Now"
         />
-        <br></br>
+        <br />
         <Card
           title=" What next after graduation?"
-          imageImport={carrer}
+          imageImport={career}
           body="By Satish Palaniappan - SDE @ Microsoft"
           watch="Watch Now"
         />
