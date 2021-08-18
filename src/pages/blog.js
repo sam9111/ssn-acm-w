@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Stack, Box, Heading, Text, Img } from "@chakra-ui/react";
+import { Stack, Box, Heading, Text, Img } from "@chakra-ui/react";
 import Saly_24 from "../images/Saly-24.png";
 import b3 from "../images/b3.png";
 import b2 from "../images/b2 1.png";
