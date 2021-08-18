@@ -2,28 +2,27 @@ import React, { Component } from "react";
 //import "./Card.css";
 import vvcoding from "../images/vvvcoding.svg";
 import { chakra, Box, Flex, useColorModeValue, Link } from "@chakra-ui/react";
-function Card({ title, imageImport, body }) {
+function Card({ title, imageImport, body, watch }) {
   return (
     <Flex
       className=".card-container"
       style={{ display: "flex", flexDirection: "row" }}
-      bg={useColorModeValue("#F9FAFB", "gray.600")}
+      bg={useColorModeValue("", "#000000")}
       //p={50}
       w="full"
       alignItems="center"
       justifyContent="left"
     >
       <Box
-        bg={useColorModeValue("white", "gray.800")}
+        bg={useColorModeValue("white", "#000000")}
         display={{ lg: "flex" }}
         shadow={{ lg: "lg" }}
         rounded={{ lg: "lg" }}
         width="580px"
         height="205px"
-        borderWidth="2px"
         borderRadius="lg"
       >
-        <Box w={{ lg: "40%" }}>
+        <Box w={{ xl: "60%" }}>
           <img src={imageImport} alt="" />
         </Box>
 
@@ -35,19 +34,19 @@ function Card({ title, imageImport, body }) {
           >
             {title}{" "}
           </chakra.h1>
-          <chakra.h2 mt={2} color={useColorModeValue("#000000", "gray.400")}>
+          <chakra.h2 mt={2} color={useColorModeValue("#000000", "white")}>
             {body}
           </chakra.h2>
 
-          <Box mt={6} px="10">
+          <Box mt={9} px="10" boxSize="xl">
             <Link
               bgGradient="linear(90deg, #56C1FD 0%, #2C88BC 100%)"
-              px={8}
-              py={3}
+              px={9}
+              py={4}
               fontWeight="semibold"
               rounded="md"
             >
-              Watch Now
+              {watch}
             </Link>
           </Box>
         </Box>
