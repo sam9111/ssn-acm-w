@@ -7,5 +7,12 @@ module.exports = {
     "gatsby-plugin-gatsby-cloud",
     "@chakra-ui/gatsby-plugin",
     "gatsby-plugin-wrap-pages",
+    {
+      resolve: "gatsby-source-graphcms",
+      options: {
+        endpoint:
+          "https://api-ap-northeast-1.graphcms.com/v2/cksfnx5ig0n6l01xvcjga06wr/master",
+      },
+    },
   ],
 };
