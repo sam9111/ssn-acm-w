@@ -67,6 +67,7 @@ const ValidationSchemaExample = () => (
 );
 
 function ContactPage() {
+<<<<<<< HEAD
   return (
     <Box>
       <Stack
@@ -117,6 +118,9 @@ function ContactPage() {
       </Stack>
     </Box>
   );
+=======
+  return <Box>Contact page</Box>;
+>>>>>>> Random
 }
 
 export default ContactPage;
