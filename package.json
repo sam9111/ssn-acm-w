@@ -25,6 +25,7 @@
     "@fontsource/josefin-sans": "^4.5.0",
     "babel-eslint": "^10.1.0",
     "framer-motion": "^4.1.17",
+    "fsevents": "^2.3.2",
     "gatsby": "^3.10.2",
     "gatsby-plugin-gatsby-cloud": "^2.10.1",
     "gatsby-plugin-image": "^1.4.0",
@@ -35,7 +36,8 @@
     "gatsby-source-graphql": "^3.11.0",
     "gatsby-transformer-sharp": "^3.11.0",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "react-tabs": "^3.2.2"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.15.0",
