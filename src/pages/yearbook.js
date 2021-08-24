@@ -18,6 +18,7 @@ import {
   Button,
   Select,
   Stack,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import { TriangleDownIcon } from "@chakra-ui/icons";
 
@@ -40,15 +41,30 @@ function YearBookPage() {
             Yearbook
           </Text>
         </Heading>
-        <Box w="xs" bg={"white"} fontSize="xl">
-          <Select placeholder="Select option" size="lg">
+        <Box
+          w="xs"
+          bg={useColorModeValue("white", "gray.800")}
+          fontSize="xl"
+          borderRadius={"3xl"}
+        >
+          <Select placeholder="Select option" size="lg" borderRadius={"3xl"}>
             <option value="option1">Option 1</option>
             <option value="option2">Option 2</option>
             <option value="option3">Option 3</option>
           </Select>
         </Box>
-        <Box bg={"white"} borderRadius={"3xl"}>
-          <Tabs variant="enclosed" align="center" isFitted width={"full"}>
+        <Box
+          bg={useColorModeValue("white", "gray.800")}
+          boxShadow="2xl"
+          borderRadius={"3xl"}
+        >
+          <Tabs
+            variant="enclosed"
+            align="center"
+            isFitted
+            width={"full"}
+            borderRadius={"3xl"}
+          >
             <TabList>
               <Tab>
                 <Text

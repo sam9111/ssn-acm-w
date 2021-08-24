@@ -34,7 +34,7 @@ function BlogPage() {
               Blog
             </Text>
           </Heading>
-          <Stack spacing={{ base: 4, md: 5 }}>
+          <Stack spacing={{ base: 8, md: 10 }}>
             <CommonCard
               title=" Coding Essentials"
               imageImport={b3}

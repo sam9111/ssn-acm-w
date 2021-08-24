@@ -4,6 +4,7 @@ import {
   Box,
   Flex,
   useColorModeValue,
+  useColorMode,
   Link,
   Img,
   Heading,
@@ -23,13 +24,14 @@ export default function CommonCard({
   link,
   cardType,
 }) {
+  const { colorMode, toggleColorMode } = useColorMode();
   return (
     <Flex justify={"center"} align={"center"} position={"relative"} w={"full"}>
       <Box
         bg={useColorModeValue("white", "gray.800")}
         position={"relative"}
         borderRadius={"3xl"}
-        boxShadow={"2xl"}
+        boxShadow={colorMode === "light" ? "2xl" : "dark-lg"}
         width={"full"}
         overflow={"hidden"}
       >
