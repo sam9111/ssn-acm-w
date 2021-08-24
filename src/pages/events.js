@@ -3,6 +3,9 @@ import React from "react";
 import { Center, Heading } from "@chakra-ui/react";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 import { Box, Text, Flex } from "@chakra-ui/react";
+
+import CommonCardLayout from "../components/CommonCardLayout";
+
 function Events() {
   return (
     <Box>
@@ -16,49 +19,47 @@ function Events() {
             Events
           </Text>
         </Heading>
-        <Box width={"full"} p={10}>
-          <Tabs variant="line" align="center" isFitted>
-            <TabList>
-              <Tab>
-                <Text
-                  fontSize={{ base: "lg", sm: "xl", lg: "2xl" }}
-                  fontWeight="bold"
-                >
-                  Past
-                </Text>
-              </Tab>
-              <Tab>
-                <Text
-                  fontSize={{ base: "lg", sm: "xl", lg: "2xl" }}
-                  fontWeight="bold"
-                >
-                  {new Date().getFullYear() +
-                    " - " +
-                    (new Date().getFullYear() + 1)}
-                </Text>
-              </Tab>
-              <Tab>
-                <Text
-                  fontSize={{ base: "lg", sm: "xl", lg: "2xl" }}
-                  fontWeight="bold"
-                >
-                  Upcoming
-                </Text>
-              </Tab>
-            </TabList>
-            <TabPanels>
-              <TabPanel>
-                <p style={{ align: "left" }}>Past</p>
-              </TabPanel>
-              <TabPanel>
-                <div></div>
-              </TabPanel>
-              <TabPanel>
-                <p>Upcoming</p>
-              </TabPanel>
-            </TabPanels>
-          </Tabs>
-        </Box>
+        <Tabs variant="line" align="center" isFitted width={"full"} p={10}>
+          <TabList>
+            <Tab>
+              <Text
+                fontSize={{ base: "lg", sm: "xl", lg: "2xl" }}
+                fontWeight="bold"
+              >
+                Past
+              </Text>
+            </Tab>
+            <Tab>
+              <Text
+                fontSize={{ base: "lg", sm: "xl", lg: "2xl" }}
+                fontWeight="bold"
+              >
+                {new Date().getFullYear() +
+                  " - " +
+                  (new Date().getFullYear() + 1)}
+              </Text>
+            </Tab>
+            <Tab>
+              <Text
+                fontSize={{ base: "lg", sm: "xl", lg: "2xl" }}
+                fontWeight="bold"
+              >
+                Upcoming
+              </Text>
+            </Tab>
+          </TabList>
+          <TabPanels>
+            <TabPanel>
+              <CommonCardLayout />
+            </TabPanel>
+            <TabPanel>
+              <CommonCardLayout />
+            </TabPanel>
+            <TabPanel>
+              <CommonCardLayout />
+            </TabPanel>
+          </TabPanels>
+        </Tabs>
       </Box>
     </Box>
   );
