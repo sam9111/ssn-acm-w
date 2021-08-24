@@ -10,29 +10,9 @@ import {
 } from "@chakra-ui/react";
 import { graphql, useStaticQuery } from "gatsby";
 
-function GridItem(props) {
-  const { name, image, position } = props;
-  return (
-    <Center flexDirection="column" p={"auto"}>
-      <Avatar size="2xl" src={image} />
-      <Text
-        fontWeight={"bold"}
-        fontSize={{ base: "lg", sm: "xl", lg: "2xl" }}
-        py={{ base: 3, md: 4 }}
-      >
-        {name}
-      </Text>
-      <Text
-        fontWeight={"thin"}
-        as={"span"}
-        position={"relative"}
-        fontSize={{ base: "sm", sm: "md", lg: "lg" }}
-      >
-        {position}
-      </Text>
-    </Center>
-  );
-}
+import TeamGrid from "../components/TeamGrid";
+
+
 function TeamPage() {
   const { currentTeamMembers } = useStaticQuery(graphql`
     {
@@ -64,28 +44,7 @@ function TeamPage() {
           </Text>
         </Heading>
       </Box>
-      <Stack
-        justify="center"
-        align={"center"}
-        spacing={{ base: "80px", md: "140px" }}
-        direction={{ base: "column", md: "row" }}
-      >
-        <GridItem />
-        <GridItem />
-      </Stack>
-      <SimpleGrid
-        py={{ base: 10, md: 14 }}
-        minChildWidth="240px"
-        spacing="80px"
-      >
-        {currentTeamMembers.nodes.map((currentTeamMember) => (
-          <GridItem
-            name={currentTeamMember.name}
-            image={currentTeamMember.image.url}
-            position={currentTeamMember.position}
-          />
-        ))}
-      </SimpleGrid>
+      <TeamGrid team={currentTeamMembers.nodes} />
     </Box>
   );
 }
