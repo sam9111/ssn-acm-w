@@ -26,7 +26,7 @@ function HomeCard() {
         bg={useColorModeValue("white", "gray.800")}
         position={"relative"}
         borderRadius={"3xl"}
-        boxShadow={"lg"}
+        boxShadow={"2xl"}
         width={"full"}
         overflow={"hidden"}
         p={10}

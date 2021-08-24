@@ -29,7 +29,7 @@ export default function CommonCard({
         bg={useColorModeValue("white", "gray.800")}
         position={"relative"}
         borderRadius={"3xl"}
-        boxShadow={"lg"}
+        boxShadow={"2xl"}
         width={"full"}
         overflow={"hidden"}
       >
@@ -45,7 +45,7 @@ export default function CommonCard({
             <Heading
               lineHeight={1.1}
               fontWeight={600}
-              fontSize={{ base: "xl", sm: "2xl", lg: "3xl" }}
+              fontSize={{ base: "md", sm: "lg", lg: "xl" }}
             >
               {title}
             </Heading>
