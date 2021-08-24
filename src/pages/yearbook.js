@@ -1,26 +1,17 @@
 import React from "react";
-import { Center, Heading } from "@chakra-ui/react";
-import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 import {
+  Heading,
+  Tabs,
+  TabList,
+  TabPanels,
+  Tab,
+  TabPanel,
   Box,
   Text,
-  Flex,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  MenuItemOption,
-  MenuGroup,
-  MenuOptionGroup,
-  MenuIcon,
-  MenuCommand,
-  MenuDivider,
-  Button,
   Select,
   Stack,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { TriangleDownIcon } from "@chakra-ui/icons";
 
 import CommonCardLayout from "../components/CommonCardLayout";
 

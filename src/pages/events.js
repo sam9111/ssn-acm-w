@@ -1,8 +1,16 @@
 // src/pages/Events.js
 import React from "react";
-import { Center, Heading } from "@chakra-ui/react";
-import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
-import { Box, Text, Flex } from "@chakra-ui/react";
+import {
+  Heading,
+  Tabs,
+  TabList,
+  TabPanels,
+  Tab,
+  TabPanel,
+  Box,
+  Text,
+  Flex,
+} from "@chakra-ui/react";
 
 import CommonCardLayout from "../components/CommonCardLayout";
 

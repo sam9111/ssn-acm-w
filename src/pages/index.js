@@ -1,7 +1,6 @@
 // src/pages/index.js
 import React from "react";
 import {
-  Container,
   Stack,
   Box,
   Heading,

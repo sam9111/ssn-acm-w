@@ -5,16 +5,10 @@ import {
   Flex,
   useColorModeValue,
   useColorMode,
-  Link,
   Img,
   Heading,
   Text,
-  Center,
-  Container,
   Button,
-  LinkBox,
-  Spacer,
-  Wrap,
 } from "@chakra-ui/react";
 
 export default function CommonCard({
