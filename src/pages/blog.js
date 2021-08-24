@@ -2,10 +2,8 @@ import React from "react";
 import { Stack, Box, Heading, Text, Img } from "@chakra-ui/react";
 import Saly_24 from "../images/Saly-24.png";
 import b3 from "../images/b3.png";
-import b2 from "../images/b2 1.png";
-import b1 from "../images/b1.png";
 
-import Card from "../components/Card";
+import CommonCard from "../components/CommonCard.js";
 
 function BlogPage() {
   return (
@@ -16,54 +14,56 @@ function BlogPage() {
         py={{ base: 20, md: 28 }}
         direction={{ base: "column", md: "row" }}
       >
-        <Box
-          position={"relative"}
-          overflow={"hidden"}
-          height={"569"}
-          width={"569"}
-        >
+        <Box>
           <Img
             alt={"Hero Image"}
             fit={"cover"}
             align={"center"}
             src={Saly_24}
-            bgSize={"lg"}
-            height={"569"}
-            width={"569"}
           />
         </Box>
-        <Stack flex={1} spacing={{ base: 4, md: 10 }} height={"xl"}>
+
+        <Stack flex={1} spacing={{ base: 5, md: 10 }}>
           <Heading
             lineHeight={1.1}
             fontWeight={600}
-            fontSize={{ base: "3xl", sm: "2xl", lg: "6xl" }}
+            fontSize={{ base: "3xl", sm: "4xl", lg: "5xl" }}
             align={"center"}
           >
-            <Text>Blog</Text>
+            <Text as={"span"} position={"relative"}>
+              Blog
+            </Text>
           </Heading>
-          <br />
-          <div className="Current">
-            <Card
+          <Stack spacing={{ base: 4, md: 5 }}>
+            <CommonCard
               title=" Coding Essentials"
               imageImport={b3}
-              body="Workshop on essentials for coding interviews"
-              watch="Check it Out!"
+              body="Workshop on essentihthth thytht  rrtrt als for coding inte rviewsdf jsfbiwsfiiefnw  ofnwofwfwnfowfwonfnwsfnownfowg"
+              link="Check it Out!"
+              cardType="blog"
             />
-            <br></br>
-            <Card
-              title=" Career Paths"
-              imageImport={b2}
-              body="What next after graduation?"
-              watch="Check it Out!"
+            <CommonCard
+              title=" Coding Essentials"
+              imageImport={b3}
+              body="Workshop on essentviewsdfjs  "
+              link="Check it Out!"
+              cardType="blog"
             />
-            <br></br>
-            <Card
-              title=" Successful Entreprenuer"
-              imageImport={b1}
-              body="What it takes to be a Successful Entrepreneur?"
-              watch="Check it Out!"
+            <CommonCard
+              title=" Coding Essentials"
+              imageImport={b3}
+              body="Workshop on essentialsw sdfjsfbi wsfiiefn wnfowfwon fnwsfnownfowg"
+              link="Check it Out!"
+              cardType="blog"
             />
-          </div>
+            <CommonCard
+              title=" Coding Essentials"
+              imageImport={b3}
+              body="Wr coding   wsfiiefnwof nwofwfwnfow fwonfnw sfnownfowg"
+              link="Check it Out!"
+              cardType="blog"
+            />
+          </Stack>
         </Stack>
       </Stack>
     </Box>
