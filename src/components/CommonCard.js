@@ -33,11 +33,14 @@ export default function CommonCard({
           direction={{ base: "column", md: "row", lg: "xl" }}
           align={"flex-start"}
         >
-          <Box position={"relative"} w={{ base: "xs", md: "sm" }}>
-            <Img src={imageImport} alt={title} fit={"fill"} />
-          </Box>
+          <Img src={imageImport} alt={title} fit={"contain"} boxSize="xs" />
 
-          <Stack spacing={{ base: 4, md: 5 }} w="sm" p={5} align={"flex-start"}>
+          <Stack
+            spacing={{ base: 4, md: 5 }}
+            w={{ base: "xs", md: "sm" }}
+            p={5}
+            align={"flex-start"}
+          >
             <Heading
               lineHeight={1.1}
               fontWeight={600}
@@ -52,7 +55,7 @@ export default function CommonCard({
               {body}
             </Text>
 
-            <Box>
+            <Box align={"flex-end"}>
               <Button as="a" href="https://github.com">
                 {cardType == "blog" ? (
                   <Text>Check it out!</Text>
