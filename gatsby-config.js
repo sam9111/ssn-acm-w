@@ -7,9 +7,6 @@ module.exports = {
     "gatsby-plugin-gatsby-cloud",
     "@chakra-ui/gatsby-plugin",
     "gatsby-plugin-wrap-pages",
-    "gatsby-plugin-image",
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
     {
       resolve: "gatsby-source-graphcms",
       options: {

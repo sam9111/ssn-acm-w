@@ -16,34 +16,32 @@
     "lint": "eslint . --fix"
   },
   "dependencies": {
-    "@apollo/client": "^3.2.9",
     "@chakra-ui/gatsby-plugin": "^2.0.1",
     "@chakra-ui/icons": "^1.0.14",
     "@chakra-ui/react": "^1.6.5",
     "@emotion/react": "^11.4.0",
     "@emotion/styled": "^11.3.0",
     "@fontsource/josefin-sans": "^4.5.0",
-    "babel-eslint": "^10.1.0",
+    "formik": "^2.2.9",
     "framer-motion": "^4.1.17",
-    "fsevents": "^2.3.2",
     "gatsby": "^3.10.2",
     "gatsby-plugin-gatsby-cloud": "^2.10.1",
     "gatsby-plugin-image": "^1.4.0",
-    "gatsby-plugin-sharp": "^3.11.0",
     "gatsby-plugin-wrap-pages": "^1.0.4",
-    "gatsby-source-filesystem": "^3.11.0",
     "gatsby-source-graphcms": "^2.6.0",
     "gatsby-source-graphql": "^3.11.0",
-    "gatsby-transformer-sharp": "^3.11.0",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "yup": "^0.32.9"
   },
   "devDependencies": {
+    "babel-eslint": "^10.1.0",
     "@babel/eslint-parser": "^7.15.0",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.24.0",
+    "fsevents": "^2.3.2",
     "prettier": "^2.3.2",
     "typescript": "^4.3.5"
   }

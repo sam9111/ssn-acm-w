@@ -15,6 +15,8 @@ import {
 
 import CommonCardLayout from "../components/CommonCardLayout";
 
+import TeamGrid from "../components/TeamGrid";
+
 function YearBookPage() {
   return (
     <Box>
@@ -78,7 +80,9 @@ function YearBookPage() {
               <TabPanel>
                 <CommonCardLayout />
               </TabPanel>
-              <TabPanel></TabPanel>
+              <TabPanel>
+                <TeamGrid team={[]} faculty={[]} />
+              </TabPanel>
             </TabPanels>
           </Tabs>
         </Box>
