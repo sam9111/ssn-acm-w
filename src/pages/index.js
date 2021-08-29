@@ -11,8 +11,8 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import Saly_19 from "../images/Saly-19.png";
-
-function HomeCard() {
+import { graphql, StaticQuery } from "gatsby";
+function HomeCard({ text, heading }) {
   return (
     <Flex
       flex={1}
@@ -20,7 +20,20 @@ function HomeCard() {
       align={"center"}
       position={"relative"}
       w={"full"}
+      direction={"column"}
     >
+      {heading ? (
+        <Heading
+          lineHeight={1.1}
+          fontWeight={600}
+          fontSize={{ base: "2xl", sm: "3xl", lg: "4xl" }}
+          py={5}
+        >
+          <Text as={"span"} position={"relative"}>
+            {heading}
+          </Text>
+        </Heading>
+      ) : null}
       <Center
         bg={useColorModeValue("white", "gray.800")}
         position={"relative"}
@@ -33,24 +46,11 @@ function HomeCard() {
         <Text
           lineHeight={1.1}
           fontWeight={300}
-          fontSize={{ base: "sm", sm: "md", lg: "lg" }}
+          fontSize={{ base: "md", sm: "lg", lg: "xl" }}
           as={"span"}
           position={"relative"}
         >
-          ACM-W SSN is a team of enthusiastic engineers representing the diverse
-          community of Association of Computing Machinery’s Council of Women in
-          Computing (ACM - W), with a student chapter based out of SSN College
-          of Engineering, Chennai. We work towards helping computing
-          professionals to advance in their profession by forming connections,
-          skill-building and creating a positive social impact.Lorem ipsum dolor
-          sit amet, consectetur adipiscing elit. Congue turpis lacus amet eget.
-          Elit a, ut viverra enim. Pellentesque scelerisque risus a, consequat
-          cursus consequat. Ullamcorper felis cursus morbi quis faucibus
-          volutpat malesuada elementum habitant. Lorem ipsum dolor sit amet,
-          consectetur adipiscing elit. Congue turpis lacus amet eget. Elit a, ut
-          viverra enim. Pellentesque scelerisque risus a, consequat cursus
-          consequat. Ullamcorper felis cursus morbi quis faucibus volutpat
-          malesuada elementum habitant.
+          {text}
         </Text>
       </Center>
     </Flex>
@@ -59,64 +59,78 @@ function HomeCard() {
 
 function IndexPage() {
   return (
-    <Box>
-      <Stack
-        align={"center"}
-        spacing={{ base: 8, md: 10 }}
-        py={{ base: 20, md: 28 }}
-        direction={{ base: "column", md: "row" }}
-      >
-        <Box position={"relative"} overflow={"hidden"}>
-          <Img
-            alt={"Hero Image"}
-            fit={"cover"}
+    <StaticQuery
+      query={graphql`
+        query {
+          graphCmsAbout {
+            about
+            chapter_name
+            mission
+            tagline
+            vision
+          }
+        }
+      `}
+      render={(data) => (
+        <Box>
+          <Stack
             align={"center"}
-            src={Saly_19}
-          />
-        </Box>
+            spacing={{ base: 8, md: 10 }}
+            py={{ base: 10, md: 14 }}
+            direction={{ base: "column", md: "row" }}
+          >
+            <Box position={"relative"} overflow={"hidden"}>
+              <Img
+                alt={"Hero Image"}
+                fit={"cover"}
+                align={"center"}
+                src={Saly_19}
+              />
+            </Box>
 
-        <Stack flex={1} spacing={{ base: 5, md: 10 }}>
-          <Heading
-            lineHeight={1.1}
-            fontWeight={600}
-            fontSize={{ base: "3xl", sm: "5xl", lg: "7xl" }}
+            <Stack flex={1} spacing={{ base: 5, md: 10 }}>
+              <Heading
+                lineHeight={1.1}
+                fontWeight={600}
+                fontSize={{ base: "3xl", sm: "5xl", lg: "7xl" }}
+              >
+                <Text as={"span"} position={"relative"}>
+                  {data.graphCmsAbout.chapter_name}
+                </Text>
+              </Heading>
+              <Text
+                lineHeight={1.1}
+                fontWeight={600}
+                fontSize={{ base: "2xl", sm: "3xl", lg: "4xl" }}
+                as={"span"}
+                position={"relative"}
+                _after={{
+                  content: "''",
+                  width: "full",
+                  height: "30%",
+                  position: "absolute",
+                  bottom: 1,
+                  left: 0,
+                }}
+              >
+                {data.graphCmsAbout.tagline}
+              </Text>
+              <HomeCard text={data.graphCmsAbout.about} />
+            </Stack>
+          </Stack>
+
+          <Stack
+            align={"center"}
+            spacing={{ base: 8, md: 10 }}
+            py={{ base: 5, md: 7 }}
+            direction={{ base: "column", md: "row" }}
           >
-            <Text as={"span"} position={"relative"}>
-              SSN ACM-W Student Chapter
-            </Text>
-          </Heading>
-          <Text
-            lineHeight={1.1}
-            fontWeight={600}
-            fontSize={{ base: "1xl", sm: "2xl", lg: "3xl" }}
-            as={"span"}
-            position={"relative"}
-            _after={{
-              content: "''",
-              width: "full",
-              height: "30%",
-              position: "absolute",
-              bottom: 1,
-              left: 0,
-            }}
-          >
-            Creating an inclusive environment for women in computing
-          </Text>
-          <HomeCard />
-        </Stack>
-      </Stack>
-      <HomeCard />
-      <Stack
-        align={"center"}
-        spacing={{ base: 8, md: 10 }}
-        py={{ base: 20, md: 28 }}
-        direction={{ base: "column", md: "row" }}
-      >
-        <HomeCard />
-        <HomeCard />
-        <HomeCard />
-      </Stack>
-    </Box>
+            <HomeCard text={data.graphCmsAbout.mission} heading="Mission" />
+            <HomeCard text={data.graphCmsAbout.vision} heading="Vision" />
+          </Stack>
+        </Box>
+      )}
+    />
   );
 }
 export default IndexPage;
