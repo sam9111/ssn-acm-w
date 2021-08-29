@@ -1,0 +1,33 @@
+fragment About on About {
+  stage
+  remoteId: id
+  createdAt
+  updatedAt
+  publishedAt
+  chapter_name
+  tagline
+  about
+  mission
+  vision
+  createdBy {
+    ... on User {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  updatedBy {
+    ... on User {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  publishedBy {
+    ... on User {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+}

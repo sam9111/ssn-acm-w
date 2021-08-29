@@ -43,8 +43,13 @@ export default function TeamGrid(props) {
         spacing={{ base: "80px", md: "140px" }}
         direction={{ base: "column", md: "row" }}
       >
-        <GridItem />
-        <GridItem />
+        {faculty.map((teamMember) => (
+          <GridItem
+            name={teamMember.name}
+            image={teamMember.image.url}
+            position={teamMember.position}
+          />
+        ))}
       </Stack>
       <SimpleGrid
         py={{ base: 10, md: 14 }}
