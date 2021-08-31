@@ -4,6 +4,9 @@ fragment BlogPost on BlogPost {
   createdAt
   updatedAt
   publishedAt
+  title
+  about
+  link
   createdBy {
     ... on User {
       remoteTypeName: __typename
@@ -22,6 +25,14 @@ fragment BlogPost on BlogPost {
     ... on User {
       remoteTypeName: __typename
       remoteId: id
+      stage
+    }
+  }
+  coverImage {
+    ... on Asset {
+      remoteTypeName: __typename
+      remoteId: id
+      locale
       stage
     }
   }

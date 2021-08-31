@@ -18,7 +18,7 @@ const SignupSchema = Yup.object().shape({
     .required("Required"),
 });
 
-export const ValidationSchemaExample = () => (
+const ValidationSchemaExample = () => (
   <div>
     <Formik
       initialValues={{

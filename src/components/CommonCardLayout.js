@@ -13,34 +13,6 @@ export default function CommonCardLayout() {
         link="Check it Out!"
         cardType="events"
       />
-      <CommonCard
-        title=" Coding Essentials"
-        imageImport={careertalk}
-        body="Workshop on essentviewsdfjs  "
-        link="Check it Out!"
-        cardType="events"
-      />
-      <CommonCard
-        title=" Coding Essentials"
-        imageImport={careertalk}
-        body="Workshop on essentviewsdfjs  "
-        link="Check it Out!"
-        cardType="events"
-      />
-      <CommonCard
-        title=" Coding Essentials"
-        imageImport={careertalk}
-        body="Workshop on essentviewsdfjs  "
-        link="Check it Out!"
-        cardType="events"
-      />
-      <CommonCard
-        title=" Coding Essentials"
-        imageImport={careertalk}
-        body="Workshop on essentviewsdfjs  "
-        link="Check it Out!"
-        cardType="events"
-      />
     </SimpleGrid>
   );
 }
