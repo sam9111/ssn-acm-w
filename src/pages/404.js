@@ -7,7 +7,7 @@ function NotFoundPage() {
 return  ( <Box>
 <Center h="25em"><Text
         fontWeight={"extrabold"}
-        fontSize={{ base: "lg", sm: "6em", lg: "15em" }}
+        fontSize={{ base: "lg", sm: "11em", lg: "15em" }}
         >404</Text>
         </Center>
         <Center h="0.1em">
