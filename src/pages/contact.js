@@ -3,6 +3,7 @@ import { Box,Text,Stack,Img,Heading,Button} from "@chakra-ui/react";
 import Saly_12 from "../images/Saly-12.png";
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
+import emailjs from 'emailjs-com';
  
  const SignupSchema = Yup.object().shape({
    Name: Yup.string()
@@ -35,7 +36,7 @@ import * as Yup from 'yup';
        }}
      >
        {({ errors, touched }) => (
-         <Form>
+         <Form onSubmit={sendEmail}>
            <h1>Name</h1>
            <Field name="Name" />
            {errors.Name && touched.Name ? (
@@ -68,6 +69,16 @@ import * as Yup from 'yup';
      </Formik>
    </div>
  );
+
+ function sendEmail(e) {
+  e.preventDefault();
+  emailjs.sendForm('SERVICE_ID', 'TEMPLATE_ID', e.target, 'USER_ID')
+    .then((result) => {
+        console.log(result.text);
+    }, (error) => {
+        console.log(error.text);
+    });
+}
 
 
 function ContactPage() {
