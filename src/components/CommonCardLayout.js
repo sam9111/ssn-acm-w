@@ -11,43 +11,7 @@ export default function CommonCardLayout(props) {
 
   return (
     <SimpleGrid spacing="40px" columns={{ base: 1, md: 2 }} width={"full"}>
-<<<<<<< Updated upstream
-      <CommonCard
-        title=" Coding Essentials"
-        imageImport={careertalk}
-        body="Workshop on essentviewsdfjs  "
-        link="Check it Out!"
-        cardType="events"
-      />
-      <CommonCard
-        title=" Coding Essentials"
-        imageImport={careertalk}
-        body="Workshop on essentviewsdfjs  "
-        link="Check it Out!"
-        cardType="events"
-      />
-      <CommonCard
-        title=" Coding Essentials"
-        imageImport={careertalk}
-        body="Workshop on essentviewsdfjs  "
-        link="Check it Out!"
-        cardType="events"
-      />
-      <CommonCard
-        title=" Coding Essentials"
-        imageImport={careertalk}
-        body="Workshop on essentviewsdfjs  "
-        link="Check it Out!"
-        cardType="events"
-      />
-      <CommonCard
-        title=" Coding Essentials"
-        imageImport={careertalk}
-        body="Workshop on essentviewsdfjs  "
-        link="Check it Out!"
-        cardType="events"
-      />
-=======
+    
       {temp.map((eventElement) => (
         <CommonCard
           title={eventElement.title}
@@ -57,7 +21,7 @@ export default function CommonCardLayout(props) {
           cardType="event"
         />
       ))}
->>>>>>> Stashed changes
+
     </SimpleGrid>
   );
 }

@@ -4,6 +4,9 @@ fragment Event on Event {
   createdAt
   updatedAt
   publishedAt
+  title
+  about
+  when
   createdBy {
     ... on User {
       remoteTypeName: __typename
@@ -25,4 +28,13 @@ fragment Event on Event {
       stage
     }
   }
+  coverImage {
+    ... on Asset {
+      remoteTypeName: __typename
+      remoteId: id
+      locale
+      stage
+    }
+  }
+  timeCategory
 }

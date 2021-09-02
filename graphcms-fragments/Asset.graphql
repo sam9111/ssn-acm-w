@@ -39,5 +39,26 @@ fragment Asset on Asset {
       stage
     }
   }
+  imageFacultyMember {
+    ... on FacultyMember {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  coverImageBlogPost {
+    ... on BlogPost {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  coverImageEvent {
+    ... on Event {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
   url
 }
