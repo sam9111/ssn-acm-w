@@ -19,8 +19,8 @@ function Events() {
   return (
     <StaticQuery
       query={graphql`
-        {
-          allGraphCmsEvent {
+        query {
+          allGraphCmsEvent(filter: { stage: { eq: PUBLISHED } }) {
             nodes {
               title
               about
@@ -75,14 +75,10 @@ function Events() {
               </TabList>
               <TabPanels>
                 <TabPanel>
-                  <CommonCardLayout props={data.allGraphCmsEvent.nodes} />
+                  <CommonCardLayout events={data.allGraphCmsEvent.nodes} />
                 </TabPanel>
-                <TabPanel>
-                  <CommonCardLayout props={data.allGraphCmsEvent.nodes} />
-                </TabPanel>
-                <TabPanel>
-                  <CommonCardLayout props={data.allGraphCmsEvent.nodes} />
-                </TabPanel>
+                <TabPanel></TabPanel>
+                <TabPanel></TabPanel>
               </TabPanels>
             </Tabs>
           </Box>

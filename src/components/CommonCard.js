@@ -9,57 +9,55 @@ import {
   Heading,
   Text,
   Button,
+  Center,
 } from "@chakra-ui/react";
 
-export default function CommonCard({
-  title,
-  imageImport,
-  body,
-  link,
-  cardType,
-}) {
+export default function CommonCard({ title, image, body, link, cardType }) {
   const { colorMode, toggleColorMode } = useColorMode();
   return (
-    <Flex
-      bg={useColorModeValue("white", "gray.800")}
-      position={"relative"}
-      borderRadius={"3xl"}
-      boxShadow={colorMode === "light" ? "2xl" : "dark-lg"}
-      width={"full"}
-      overflow={"hidden"}
-      align={"stretch"}
-      direction={{ base: "column", md: "row", lg: "xl" }}
-    >
-      <Img src={imageImport} alt={title} fit={"fill"} boxSize="xs" />
-
-      <Stack
-        spacing={{ base: 4, md: 5 }}
-        w={{ base: "xs", md: "sm" }}
-        p={5}
-        align={"stretch"}
-        justify={"space-around"}
+    <Center py={12}>
+      <Box
+        role={"group"}
+        p={6}
+        maxW={"330px"}
+        w={"full"}
+        bg={useColorModeValue("white", "gray.800")}
+        boxShadow={"2xl"}
+        rounded={"lg"}
+        pos={"relative"}
+        zIndex={1}
+        borderRadius={"3xl"}
+        boxShadow={colorMode === "light" ? "2xl" : "dark-lg"}
       >
-        <Heading
-          lineHeight={1.1}
-          fontWeight={600}
-          fontSize={{ base: "md", sm: "lg", lg: "xl" }}
-        >
-          {title}
-        </Heading>
-        <Text fontSize={{ base: "sm", sm: "md", lg: "lg" }} fontWeight={400}>
-          {body}
-        </Text>
-
-        <Box>
-          <Button as="a" href={link}>
-            {cardType == "blog" ? (
-              <Text>Check it out!</Text>
-            ) : (
-              <Text>Watch Now!</Text>
-            )}
-          </Button>
+        <Box rounded={"lg"} mt={-12} pos={"relative"} height={"230px"}>
+          <Img
+            rounded={"lg"}
+            height={230}
+            width={282}
+            objectFit={"cover"}
+            src={image}
+          />
         </Box>
-      </Stack>
-    </Flex>
+        <Stack pt={10} align={"center"}>
+          <Heading fontSize={"2xl"} fontFamily={"body"} fontWeight={800}>
+            {title}
+          </Heading>
+          <Stack direction={"row"} align={"center"}>
+            <Text fontWeight={500} fontSize={"xl"}>
+              {body}
+            </Text>
+          </Stack>
+          <Box p={5}>
+            <Button as="a" href={link}>
+              {cardType == "blog" ? (
+                <Text>Check it out!</Text>
+              ) : (
+                <Text>Watch Now!</Text>
+              )}
+            </Button>
+          </Box>
+        </Stack>
+      </Box>
+    </Center>
   );
 }

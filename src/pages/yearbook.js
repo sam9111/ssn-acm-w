@@ -77,9 +77,7 @@ function YearBookPage() {
               </Tab>
             </TabList>
             <TabPanels>
-              <TabPanel>
-                <CommonCardLayout />
-              </TabPanel>
+              <TabPanel></TabPanel>
               <TabPanel>
                 <TeamGrid team={[]} faculty={[]} />
               </TabPanel>
