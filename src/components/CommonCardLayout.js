@@ -11,7 +11,6 @@ export default function CommonCardLayout(props) {
 
   return (
     <SimpleGrid spacing="40px" columns={{ base: 1, md: 2 }} width={"full"}>
-    
       {temp.map((eventElement) => (
         <CommonCard
           title={eventElement.title}
@@ -21,7 +20,6 @@ export default function CommonCardLayout(props) {
           cardType="event"
         />
       ))}
-
     </SimpleGrid>
   );
 }
