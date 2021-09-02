@@ -26,7 +26,7 @@ function generate_years() {
   }
   return years;
 }
-const YEARS = generate_years().reverse();
+const YEARS = generate_years();
 
 function YearBookPage() {
   const [year, setYear] = useState(YEARS[0]);
@@ -65,7 +65,6 @@ function YearBookPage() {
               </Text>
             </Heading>
             <Box
-              w="xs"
               bg={useColorModeValue("white", "gray.800")}
               fontSize="xl"
               borderRadius={"3xl"}
@@ -108,7 +107,7 @@ function YearBookPage() {
                     </Text>
                   </Tab>
                 </TabList>
-                <TabPanels p={10}>
+                <TabPanels>
                   <TabPanel>
                     {" "}
                     <CommonCardLayout
