@@ -28,6 +28,7 @@ function Events() {
               coverImage {
                 url
               }
+              timeCategory
             }
           }
         }
@@ -75,10 +76,26 @@ function Events() {
               </TabList>
               <TabPanels>
                 <TabPanel>
-                  <CommonCardLayout events={data.allGraphCmsEvent.nodes} />
+                  <CommonCardLayout
+                    events={data.allGraphCmsEvent.nodes.filter(
+                      (event) => event.timeCategory == "Past"
+                    )}
+                  />
                 </TabPanel>
-                <TabPanel></TabPanel>
-                <TabPanel></TabPanel>
+                <TabPanel>
+                  <CommonCardLayout
+                    events={data.allGraphCmsEvent.nodes.filter(
+                      (event) => event.timeCategory == "Present"
+                    )}
+                  />
+                </TabPanel>
+                <TabPanel>
+                  <CommonCardLayout
+                    events={data.allGraphCmsEvent.nodes.filter(
+                      (event) => event.timeCategory == "Upcoming"
+                    )}
+                  />
+                </TabPanel>
               </TabPanels>
             </Tabs>
           </Box>
