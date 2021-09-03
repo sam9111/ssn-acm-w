@@ -1,134 +1,213 @@
-import React from "react";
-import { Box,Text,Stack,Img,Heading,Button} from "@chakra-ui/react";
+import React, { useState } from "react";
+import {
+  Box,
+  Text,
+  Stack,
+  Img,
+  Heading,
+  Button,
+  FormControl,
+  FormLabel,
+  FormErrorMessage,
+  FormHelperText,
+  Input,
+  Flex,
+  Textarea,
+  useColorModeValue,
+  Alert,
+  AlertIcon,
+  AlertTitle,
+  AlertDescription,
+  CloseButton,
+} from "@chakra-ui/react";
 import Saly_12 from "../images/Saly-12.png";
-import { Formik, Form, Field } from 'formik';
-import * as Yup from 'yup';
-import emailjs from 'emailjs-com';
- 
- const SignupSchema = Yup.object().shape({
-   Name: Yup.string()
-     .min(2, 'Too Short!')
-     .max(50, 'Too Long!')
-     .required('Required'),
-   
-   Email: Yup.string().email('Invalid email').required('Required'),
-
-   Message: Yup.string()
-     .min(2, 'Too Short!')
-     .max(800, 'Too Long!')
-     .required('Required'),
- });
- 
- export const ValidationSchemaExample = () => (
-   <div>
-     <Formik
-       initialValues={{
-         Name: '',
-         Email: '',
-         Message: '',
-        }}
-       validationSchema={SignupSchema}
-       onSubmit={( values, { setSubmitting }) => {
-        setTimeout(() => {
-          alert(JSON.stringify(values, null, 2));
-          setSubmitting(false);
-        }, 400);
-       }}
-     >
-       {({ errors, touched }) => (
-         <Form onSubmit={sendEmail}>
-           <h1>Name</h1>
-           <Field name="Name" />
-           {errors.Name && touched.Name ? (
-             <div>{errors.Name}</div>
-           ) : null}
-           
-           <br></br>
-           <br></br>
-           
-           <h1>Email</h1>
-           <Field name="Email" type="Email" />
-           {errors.Email && touched.Email ? <div>{errors.Email}</div> : null}
-
-           <br></br>
-           <br></br>
-
-           <h1>Your message</h1>
-           <Field name="Message" />
-           {errors.Message && touched.Message ? (
-             <div>{errors.Message}</div>
-           ) : null}
-
-
-           <br></br>
-           <br></br>
-           <br></br>
-           <Button type="submit">Submit</Button>
-         </Form>
-       )}
-     </Formik>
-   </div>
- );
-
- function sendEmail(e) {
-  e.preventDefault();
-  emailjs.sendForm('SERVICE_ID', 'TEMPLATE_ID', e.target, 'USER_ID')
-    .then((result) => {
-        console.log(result.text);
-    }, (error) => {
-        console.log(error.text);
-    });
-}
-
+import { Formik, Form, Field } from "formik";
+import emailjs from "emailjs-com";
 
 function ContactPage() {
-  return(
-  <Box>
-    <Stack
-        align={"center"}
+  const [success, setSuccess] = React.useState(false);
+
+  function sendEmail(e) {
+    e.preventDefault();
+    emailjs
+      .sendForm(
+        "service_ee52o9n",
+        "template_eey5b7i",
+        e.target,
+        "user_b3JDGcM7Xay0Aj2BFlhs7"
+      )
+      .then(
+        (result) => {
+          setSuccess(true);
+        },
+        (error) => {
+          setSuccess(false);
+        }
+      );
+  }
+
+  function validate(value) {
+    let error;
+    if (!value) {
+      error = "Required field!";
+    }
+    return error;
+  }
+
+  return (
+    <Box py={{ base: 10, md: 14 }}>
+      <Stack
+        align={"right"}
         spacing={{ base: 8, md: 10 }}
-        py={{ base: 20, md: 28 }}
         direction={{ base: "column", md: "row" }}
       >
-        <Box position={"relative"} overflow={"hidden"} w={[300, 400, 500]}>
+        <Box>
           <Img
-            alt={"Contact Image"}
+            alt={"Hero Image"}
             fit={"cover"}
             align={"center"}
             src={Saly_12}
           />
         </Box>
-        <Stack flex={1} spacing={{ base: 5, md: 10 }}>
+        <Stack flex={1} spacing={{ base: 2, md: 5 }}>
+          {success ? (
+            <Alert status="success">
+              <AlertIcon />
+              <Box flex="1">
+                <AlertTitle>Success!</AlertTitle>
+                <AlertDescription display="block">
+                  Thank you for your message! It has been sent to our email and
+                  our team will get back to you as soon as possible.
+                </AlertDescription>
+              </Box>
+            </Alert>
+          ) : null}
           <Heading
             lineHeight={1.1}
             fontWeight={600}
-            fontSize={{ base: "2xl", sm: "4xl", lg: "6xl" }}>
+            fontSize={{ base: "3xl", sm: "4xl", lg: "5xl" }}
+          >
             <Text as={"span"} position={"relative"}>
-              Get in Touch!
+              Get in touch!
             </Text>
           </Heading>
-          <Text
-            lineHeight={1.1}
-            fontWeight={100}
-            fontSize={{ base: "1xl", sm: "2xl", lg: "3xl" }}
-            as={"span"}
-            position={"relative"}
-            _after={{
-              content: "''",
-              width: "full",
-              height: "30%",
-              position: "absolute",
-              bottom: 1,
-              left: 0,
-            }}>
-            Send a message!
+          <Text fontWeight={500} fontSize={"2xl"}>
+            Send us a message!
           </Text>
-        </Stack>
-        <Stack >
-         <ValidationSchemaExample/>  
+
+          <Flex>
+            <Formik
+              initialValues={{
+                name: "",
+                email: "",
+                message: "",
+              }}
+              onSubmit={(values, actions) => {
+                setTimeout(() => {
+                  alert(JSON.stringify(values, null, 2));
+                  actions.setSubmitting(false);
+                }, 1000);
+              }}
+            >
+              {(props) => (
+                <Form onSubmit={sendEmail}>
+                  <Field name="name" validate={validate}>
+                    {({ field, form }) => (
+                      <FormControl
+                        isRequired
+                        isInvalid={form.errors.name && form.touched.name}
+                        py={2}
+                      >
+                        <FormLabel
+                          htmlFor="name"
+                          fontSize={"2xl"}
+                          fontFamily={"body"}
+                          fontWeight={800}
+                        >
+                          Your name
+                        </FormLabel>
+                        <Input
+                          {...field}
+                          id="name"
+                          bg={useColorModeValue("white", "gray.800")}
+                          width={{ base: "xs", md: "sm" }}
+                          size="lg"
+                        />
+                        <FormErrorMessage>{form.errors.name}</FormErrorMessage>
+                      </FormControl>
+                    )}
+                  </Field>
+                  <Field name="email" validate={validate}>
+                    {({ field, form }) => (
+                      <FormControl
+                        isRequired
+                        isInvalid={form.errors.name && form.touched.name}
+                        py={2}
+                      >
+                        <FormLabel
+                          htmlFor="email"
+                          fontSize={"2xl"}
+                          fontFamily={"body"}
+                          fontWeight={800}
+                        >
+                          Your email
+                        </FormLabel>
+                        <Input
+                          {...field}
+                          id="email"
+                          bg={useColorModeValue("white", "gray.800")}
+                          width={{ base: "xs", md: "sm" }}
+                          type="email"
+                          size="lg"
+                        />
+                        <FormErrorMessage>{form.errors.email}</FormErrorMessage>
+                      </FormControl>
+                    )}
+                  </Field>
+                  <Field name="message" validate={validate}>
+                    {({ field, form }) => (
+                      <FormControl
+                        isRequired
+                        isInvalid={form.errors.message && form.touched.message}
+                        py={2}
+                      >
+                        <FormLabel
+                          htmlFor="message"
+                          fontSize={"2xl"}
+                          fontFamily={"body"}
+                          fontWeight={800}
+                        >
+                          Your message
+                        </FormLabel>
+                        <Textarea
+                          {...field}
+                          id="message"
+                          bg={useColorModeValue("white", "gray.800")}
+                          width={{ base: "xs", md: "sm" }}
+                          size="lg"
+                        />
+                        <FormErrorMessage>
+                          {form.errors.message}
+                        </FormErrorMessage>
+                      </FormControl>
+                    )}
+                  </Field>
+                  <Box py={5}>
+                    <Button type="submit" size={"lg"}>
+                      Submit
+                    </Button>
+                  </Box>
+                  <Text fontWeight={300} fontSize={"md"}>
+                    Note: This form will send us an email( your email address
+                    will not be used).
+                  </Text>
+                </Form>
+              )}
+            </Formik>
+          </Flex>
         </Stack>
       </Stack>
-  </Box>
+    </Box>
   );
 }
 
