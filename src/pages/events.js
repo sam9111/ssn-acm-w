@@ -29,6 +29,7 @@ function Events() {
                 url
               }
               timeCategory
+              link
             }
           }
         }

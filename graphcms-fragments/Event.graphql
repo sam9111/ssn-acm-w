@@ -7,6 +7,7 @@ fragment Event on Event {
   title
   about
   when
+  link
   createdBy {
     ... on User {
       remoteTypeName: __typename

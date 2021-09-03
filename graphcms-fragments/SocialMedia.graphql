@@ -4,6 +4,8 @@ fragment SocialMedia on SocialMedia {
   createdAt
   updatedAt
   publishedAt
+  platform
+  link
   createdBy {
     ... on User {
       remoteTypeName: __typename

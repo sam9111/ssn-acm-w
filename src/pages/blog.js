@@ -1,17 +1,15 @@
 import React from "react";
 import { Stack, Box, Heading, Text, Img } from "@chakra-ui/react";
 import Saly_24 from "../images/Saly-24.png";
-import careertalk from "../images/careertalk.png";
 
 import CommonCard from "../components/CommonCard.js";
 
 function BlogPage() {
   return (
-    <Box>
+    <Box py={{ base: 10, md: 14 }} align={"center"}>
       <Stack
         align={"right"}
         spacing={{ base: 8, md: 10 }}
-        py={{ base: 20, md: 28 }}
         direction={{ base: "column", md: "row" }}
       >
         <Box>
@@ -35,34 +33,13 @@ function BlogPage() {
             </Text>
           </Heading>
           <Stack spacing={{ base: 8, md: 10 }}>
-            <CommonCard
+            {/* <CommonCard
               title=" Coding Essentials"
               imageImport={careertalk}
               body="Workshop on essentihthth thytht  rrtrt als for coding inte rviewsdf jsfbiwsfiiefnw  ofnwofwfwnfowfwonfnwsfnownfowg"
               link="Check it Out!"
               cardType="blog"
-            />
-            <CommonCard
-              title=" Coding Essentials"
-              imageImport={careertalk}
-              body="Workshop on essentviewsdfjs  "
-              link="Check it Out!"
-              cardType="blog"
-            />
-            <CommonCard
-              title=" Coding Essentials"
-              imageImport={careertalk}
-              body="Workshop on essentialsw sdfjsfbi wsfiiefn wnfowfwon fnwsfnownfowg"
-              link="Check it Out!"
-              cardType="blog"
-            />
-            <CommonCard
-              title=" Coding Essentials"
-              imageImport={careertalk}
-              body="Wr coding   wsfiiefnwof nwofwfwnfow fwonfnw sfnownfowg"
-              link="Check it Out!"
-              cardType="blog"
-            />
+            /> */}
           </Stack>
         </Stack>
       </Stack>

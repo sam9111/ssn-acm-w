@@ -44,17 +44,14 @@ function YearBookPage() {
                 url
               }
               timeCategory
+              link
             }
           }
         }
       `}
       render={(data) => (
-        <Box>
-          <Stack
-            py={{ base: 10, md: 14 }}
-            align={"center"}
-            spacing={{ base: 8, md: 10 }}
-          >
+        <Box py={{ base: 10, md: 14 }} align={"center"}>
+          <Stack align={"center"} spacing={{ base: 8, md: 10 }}>
             <Heading
               lineHeight={1.1}
               fontWeight={600}
@@ -114,6 +111,7 @@ function YearBookPage() {
                       events={data.allGraphCmsEvent.nodes.filter((event) => {
                         var d = new Date(event.when);
                         var y = d.getUTCFullYear();
+                        d.getUTCMonth() < 6 ? y-- : y;
                         return y == year;
                       })}
                     />

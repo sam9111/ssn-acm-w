@@ -47,15 +47,18 @@ export default function CommonCard({ title, image, body, link, cardType }) {
               {body}
             </Text>
           </Stack>
-          <Box p={5}>
-            <Button as="a" href={link}>
-              {cardType == "blog" ? (
-                <Text>Check it out!</Text>
-              ) : (
-                <Text>Watch Now!</Text>
-              )}
-            </Button>
-          </Box>
+
+          {link ? (
+            <Box p={5}>
+              <Button as="a" href={link}>
+                {cardType == "blog" ? (
+                  <Text>Check it out!</Text>
+                ) : (
+                  <Text>Watch Now!</Text>
+                )}
+              </Button>
+            </Box>
+          ) : null}
         </Stack>
       </Box>
     </Center>

@@ -72,11 +72,10 @@ function IndexPage() {
         }
       `}
       render={(data) => (
-        <Box>
+        <Box py={{ base: 10, md: 14 }} align={"center"}>
           <Stack
             align={"center"}
             spacing={{ base: 8, md: 10 }}
-            py={{ base: 10, md: 14 }}
             direction={{ base: "column", md: "row" }}
           >
             <Box position={"relative"} overflow={"hidden"}>

@@ -12,7 +12,7 @@ export default function CommonCardLayout(props) {
           title={event.title}
           image={event.coverImage.url}
           body={event.about}
-          link="www.google.com"
+          link={event.link}
           cardType="event"
         />
       ))}
