@@ -12,35 +12,37 @@ import {
 function GridItem(props) {
   const { name, image, position } = props;
   return (
-    <Center flexDirection="column" p={"auto"}>
-      <Avatar size="2xl" src={image} />
-      <Text
-        fontWeight={"bold"}
-        fontSize={{ base: "lg", sm: "xl", lg: "2xl" }}
-        py={{ base: 3, md: 4 }}
-      >
-        {name}
-      </Text>
-      <Text
-        fontWeight={"thin"}
-        as={"span"}
-        position={"relative"}
-        fontSize={{ base: "sm", sm: "md", lg: "lg" }}
-      >
-        {position}
-      </Text>
-    </Center>
+    <Box placeItems={"center"} align={"center"} p={5}>
+      <Center flexDirection="column" p={"auto"}>
+        <Avatar size="2xl" src={image} />
+        <Text
+          fontWeight={"bold"}
+          fontSize={{ base: "lg", sm: "xl", lg: "2xl" }}
+          py={{ base: 3, md: 4 }}
+        >
+          {name}
+        </Text>
+        <Text
+          fontWeight={"thin"}
+          as={"span"}
+          position={"relative"}
+          fontSize={{ base: "md", sm: "lg", lg: "xl" }}
+        >
+          {position}
+        </Text>
+      </Center>
+    </Box>
   );
 }
 
 export default function TeamGrid(props) {
   const { team, faculty } = props;
   return (
-    <Box>
+    <Box width={"full"}>
       <Stack
         justify="center"
         align={"center"}
-        spacing={{ base: "80px", md: "140px" }}
+        spacing={20}
         direction={{ base: "column", md: "row" }}
       >
         {faculty.map((teamMember) => (
@@ -52,11 +54,7 @@ export default function TeamGrid(props) {
           />
         ))}
       </Stack>
-      <SimpleGrid
-        py={{ base: 10, md: 14 }}
-        minChildWidth="240px"
-        spacing="80px"
-      >
+      <SimpleGrid py={10} columns={{ base: 1, md: 4 }}>
         {team.map((teamMember) => (
           <GridItem
             name={teamMember.name}

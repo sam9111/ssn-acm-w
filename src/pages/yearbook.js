@@ -31,7 +31,6 @@ const YEARS = generate_years();
 
 function YearBookPage() {
   const [year, setYear] = useState(YEARS[0]);
-  console.log(year);
   return (
     <StaticQuery
       query={graphql`
