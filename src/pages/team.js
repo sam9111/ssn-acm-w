@@ -17,6 +17,7 @@ function TeamPage() {
               image {
                 url
               }
+              linkedin
             }
           }
           allGraphCmsFacultyMember(filter: { currentMember: { eq: true } }) {

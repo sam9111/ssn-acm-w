@@ -7,14 +7,24 @@ import {
   Text,
   Heading,
   Stack,
+  Link,
 } from "@chakra-ui/react";
 
 function GridItem(props) {
-  const { name, image, position } = props;
+  const { name, image, position, link } = props;
   return (
     <Box placeItems={"center"} align={"center"} p={5}>
       <Center flexDirection="column" p={"auto"}>
         <Avatar size="2xl" src={image} />
+        {link ? (
+          <Link href={link} isExternal p={2}>
+            <img
+              src="https://img.icons8.com/ios-filled/50/000000/linkedin.png"
+              width="25px"
+              height="25px"
+            />
+          </Link>
+        ) : null}
         <Text
           fontWeight={"bold"}
           fontSize={{ base: "lg", sm: "xl", lg: "2xl" }}
@@ -61,6 +71,7 @@ export default function TeamGrid(props) {
             image={teamMember.image.url}
             position={teamMember.position}
             key={teamMember.id}
+            link={teamMember.linkedin}
           />
         ))}
       </SimpleGrid>
