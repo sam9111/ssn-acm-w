@@ -19,6 +19,8 @@ import {
   AlertTitle,
   AlertDescription,
   CloseButton,
+  Center,
+  Link,
 } from "@chakra-ui/react";
 import Saly_12 from "../images/Saly-12.png";
 import { Formik, Form, Field } from "formik";
@@ -69,7 +71,7 @@ function ContactPage() {
             src={Saly_12}
           />
         </Box>
-        <Stack flex={1} spacing={{ base: 2, md: 5 }}>
+        <Stack flex={1} spacing={{ base: 10, md: 14 }}>
           {success ? (
             <Alert status="success">
               <AlertIcon />
@@ -91,11 +93,53 @@ function ContactPage() {
               Get in touch!
             </Text>
           </Heading>
-          <Text fontWeight={500} fontSize={"2xl"}>
-            Send us a message!
-          </Text>
+          <Stack
+            bg={useColorModeValue("white", "gray.800")}
+            position={"relative"}
+            borderRadius={"3xl"}
+            boxShadow={"2xl"}
+            width={"full"}
+            overflow={"hidden"}
+            p={10}
+            lineHeight={1.1}
+            fontWeight={300}
+            fontSize={{ base: "md", sm: "lg", lg: "xl" }}
+          >
+            <Text as={"span"} position={"relative"}>
+              We are always happy to hear from you.
+              <br />
+              <br />
+              Our main email address is{" "}
+              <Link href="mailto:acm-w@cse.ssn.edu.in" textColor={"blue.300"}>
+                acm-w@cse.ssn.edu.in
+              </Link>
+              .
+            </Text>
 
-          <Flex>
+            <Flex direction={"row"}>
+              <Text fontWeight={"bold"}>Chairperson</Text>
+              <Text textDecor={"underline"} ml={10}>
+                {" "}
+                +91 6383688836
+              </Text>
+            </Flex>
+            <Flex direction={"row"}>
+              <Text fontWeight={"bold"}>Vice-Chairperson</Text>
+              <Text textDecor={"underline"} ml={10}>
+                {" "}
+                +91 8884406088
+              </Text>
+            </Flex>
+          </Stack>
+
+          <Box>
+            <Text fontWeight={500} fontSize={"2xl"}>
+              Send us a message!
+            </Text>
+            <Text fontWeight={300} fontSize={"md"}>
+              Note: This form will send us an email( your email address will not
+              be used).
+            </Text>
             <Formik
               initialValues={{
                 name: "",
@@ -197,14 +241,10 @@ function ContactPage() {
                       Submit
                     </Button>
                   </Box>
-                  <Text fontWeight={300} fontSize={"md"}>
-                    Note: This form will send us an email( your email address
-                    will not be used).
-                  </Text>
                 </Form>
               )}
             </Formik>
-          </Flex>
+          </Box>
         </Stack>
       </Stack>
     </Box>
