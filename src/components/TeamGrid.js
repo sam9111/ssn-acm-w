@@ -48,6 +48,7 @@ export default function TeamGrid(props) {
             name={teamMember.name}
             image={teamMember.image.url}
             position={teamMember.position}
+            key={teamMember.id}
           />
         ))}
       </Stack>
@@ -61,6 +62,7 @@ export default function TeamGrid(props) {
             name={teamMember.name}
             image={teamMember.image.url}
             position={teamMember.position}
+            key={teamMember.id}
           />
         ))}
       </SimpleGrid>

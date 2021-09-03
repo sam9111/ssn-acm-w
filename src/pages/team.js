@@ -11,6 +11,7 @@ function TeamPage() {
         query {
           allGraphCmsTeamMember(filter: { currentMember: { eq: true } }) {
             nodes {
+              id
               name
               position
               image {
@@ -20,6 +21,7 @@ function TeamPage() {
           }
           allGraphCmsFacultyMember(filter: { currentMember: { eq: true } }) {
             nodes {
+              id
               name
               position
               image {

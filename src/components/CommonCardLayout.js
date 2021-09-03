@@ -14,6 +14,7 @@ export default function CommonCardLayout(props) {
           body={event.about}
           link={event.link}
           cardType="event"
+          key={event.id.toString()}
         />
       ))}
     </SimpleGrid>

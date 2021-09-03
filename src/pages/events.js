@@ -10,10 +10,13 @@ import {
   Box,
   Text,
   Flex,
+  Center,
+  Img,
 } from "@chakra-ui/react";
 import { graphql, StaticQuery } from "gatsby";
 
 import CommonCardLayout from "../components/CommonCardLayout";
+import Saly_13 from "../images/Saly-13.png";
 
 function Events() {
   return (
@@ -22,6 +25,7 @@ function Events() {
         query {
           allGraphCmsEvent(filter: { stage: { eq: PUBLISHED } }) {
             nodes {
+              id
               title
               about
               when
@@ -91,11 +95,38 @@ function Events() {
                   />
                 </TabPanel>
                 <TabPanel>
-                  <CommonCardLayout
-                    events={data.allGraphCmsEvent.nodes.filter(
-                      (event) => event.timeCategory == "Upcoming"
-                    )}
-                  />
+                  {data.allGraphCmsEvent.nodes.filter(
+                    (event) => event.timeCategory == "Upcoming"
+                  ).length > 0 ? (
+                    <CommonCardLayout
+                      events={data.allGraphCmsEvent.nodes.filter(
+                        (event) => event.timeCategory == "Upcoming"
+                      )}
+                    />
+                  ) : (
+                    <Box>
+                      <Box position={"relative"} overflow={"hidden"}>
+                        <Img
+                          alt={"Hero Image"}
+                          fit={"cover"}
+                          align={"center"}
+                          src={Saly_13}
+                        />
+                      </Box>
+                      <Heading
+                        p={5}
+                        lineHeight={2}
+                        fontWeight={500}
+                        fontSize={{ base: "xl", sm: "2xl", lg: "3xl" }}
+                      >
+                        <Text as={"span"} position={"relative"}>
+                          We have many exciting events planned.
+                          <br />
+                          Do keep a lookout for updates on this page!
+                        </Text>
+                      </Heading>
+                    </Box>
+                  )}
                 </TabPanel>
               </TabPanels>
             </Tabs>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Heading,
   Tabs,
@@ -11,6 +11,7 @@ import {
   Select,
   Stack,
   useColorModeValue,
+  Flex,
 } from "@chakra-ui/react";
 
 import CommonCardLayout from "../components/CommonCardLayout";
@@ -21,7 +22,7 @@ import TeamGrid from "../components/TeamGrid";
 function generate_years() {
   const years = [];
   const yearNow = new Date().getFullYear();
-  for (var i = 0; i < yearNow - 2018 + 1; i++) {
+  for (var i = 0; i < yearNow - 2019 + 1; i++) {
     years.push(yearNow - i);
   }
   return years;
@@ -37,6 +38,7 @@ function YearBookPage() {
         query {
           allGraphCmsEvent(filter: { stage: { eq: PUBLISHED } }) {
             nodes {
+              id
               title
               about
               when
@@ -45,6 +47,29 @@ function YearBookPage() {
               }
               timeCategory
               link
+            }
+          }
+
+          allGraphCmsTeamMember(filter: { stage: { eq: PUBLISHED } }) {
+            nodes {
+              id
+              name
+              position
+              image {
+                url
+              }
+              year
+            }
+          }
+          allGraphCmsFacultyMember(filter: { stage: { eq: PUBLISHED } }) {
+            nodes {
+              id
+              name
+              position
+              image {
+                url
+              }
+              year
             }
           }
         }
@@ -74,17 +99,24 @@ function YearBookPage() {
                 onChange={(e) => setYear(e.target.value)}
               >
                 {YEARS.map((year) => (
-                  <option value={year}>{year + "-" + (year + 1)}</option>
+                  <option key={year} value={year}>
+                    {year + "-" + (year + 1)}
+                  </option>
                 ))}
               </Select>
             </Box>
-            <Box boxShadow="md" borderRadius={"3xl"}>
+            <Box
+              boxShadow="md"
+              borderRadius={"3xl"}
+              bg={useColorModeValue("white", "gray.800")}
+            >
               <Tabs
                 variant="enclosed"
                 align="center"
                 isFitted
                 width={"full"}
                 borderRadius={"3xl"}
+                isLazy
               >
                 <TabList>
                   <Tab>
@@ -106,7 +138,6 @@ function YearBookPage() {
                 </TabList>
                 <TabPanels>
                   <TabPanel>
-                    {" "}
                     <CommonCardLayout
                       events={data.allGraphCmsEvent.nodes.filter((event) => {
                         var d = new Date(event.when);
@@ -117,7 +148,18 @@ function YearBookPage() {
                     />
                   </TabPanel>
                   <TabPanel>
-                    <TeamGrid team={[]} faculty={[]} />
+                    <TeamGrid
+                      team={data.allGraphCmsTeamMember.nodes.filter(
+                        (member) => {
+                          return member.year == year;
+                        }
+                      )}
+                      faculty={data.allGraphCmsFacultyMember.nodes.filter(
+                        (member) => {
+                          return member.year == year;
+                        }
+                      )}
+                    />
                   </TabPanel>
                 </TabPanels>
               </Tabs>
