@@ -53,19 +53,28 @@ function Events() {
             <Tabs variant="line" align="center" isFitted width={"full"} p={10}>
               <TabList>
                 <Tab>
-                  <Text fontSize={{ base: "sm", lg: "2xl" }} fontWeight="bold">
+                  <Text
+                    fontSize={{ base: "sm", md: "xl", lg: "2xl" }}
+                    fontWeight="bold"
+                  >
                     Past
                   </Text>
                 </Tab>
                 <Tab>
-                  <Text fontSize={{ base: "sm", lg: "2xl" }} fontWeight="bold">
+                  <Text
+                    fontSize={{ base: "sm", md: "xl", lg: "2xl" }}
+                    fontWeight="bold"
+                  >
                     {new Date().getFullYear() +
                       " - " +
                       (new Date().getFullYear() + 1)}
                   </Text>
                 </Tab>
                 <Tab>
-                  <Text fontSize={{ base: "sm", lg: "2xl" }} fontWeight="bold">
+                  <Text
+                    fontSize={{ base: "sm", md: "xl", lg: "2xl" }}
+                    fontWeight="bold"
+                  >
                     Upcoming
                   </Text>
                 </Tab>
