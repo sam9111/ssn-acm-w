@@ -108,7 +108,7 @@ const MobileNav = () => {
       {NAV_ITEMS.map((navItem) => (
         <MobileNavItem
           key={navItem.label}
-          href={navItem.tab}
+          href={"/"+navItem.tab}
           label={navItem.label}
           {...navItem}
         />
