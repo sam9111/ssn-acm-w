@@ -48,10 +48,10 @@ export default function Header() {
             aria-label={"Toggle Navigation"}
           />
         </Flex>
-        <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
-          <Box align={useBreakpointValue({ base: "center", md: "left" })}>
+        <Flex flex={{ base: 1 }} justify={"start"}>
+          <Box align={useBreakpointValue({ base: "right", md: "left" })}>
             <ReachLink to={"/"}>
-              <Img src={acmw_logo} height={12} width={12} />
+              <Img src={acmw_logo} />
             </ReachLink>
           </Box>
           <Flex display={{ base: "none", md: "flex" }} m={"auto"}>
@@ -108,7 +108,7 @@ const MobileNav = () => {
       {NAV_ITEMS.map((navItem) => (
         <MobileNavItem
           key={navItem.label}
-          href={"/"+navItem.tab}
+          href={"/" + navItem.tab}
           label={navItem.label}
           {...navItem}
         />

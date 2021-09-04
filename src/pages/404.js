@@ -24,7 +24,7 @@ function NotFoundPage() {
       <Center h="10em">
         <Text
           fontWeight={"normal"}
-          fontSize={{ base: "lg", sm: "2em", lg: "3em" }}
+          fontSize={{ base: "md", sm: "lg", lg: "xl" }}
         >
           Hey there! Looks like you wandered and got lost!
         </Text>
