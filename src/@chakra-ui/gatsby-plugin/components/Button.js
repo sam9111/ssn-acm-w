@@ -16,11 +16,16 @@ const Button = {
       px: 14, // <-- these values are tokens from the design system
       py: 3, // <-- these values are tokens from the design system
     },
+    xl: {
+      fontSize: "xl",
+      px: 28,
+      py: 4,
+    },
   },
 
   variants: {
     solid: {
-      bgGradient: "linear-gradient(90deg, #56C1FD 0%, #2C88BC 100%);",
+      bgGradient: "linear-gradient(to-r,blue.300,blue.500,blue.700,black);",
       color: "white",
     },
   },

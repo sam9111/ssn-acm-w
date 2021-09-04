@@ -9,9 +9,14 @@ import {
   Flex,
   Center,
   useColorModeValue,
+  Button,
+  Link,
+  Container,
 } from "@chakra-ui/react";
 import Saly_19 from "../images/Saly-19.png";
+import Saly_15 from "../images/Saly-15.png";
 import { graphql, StaticQuery } from "gatsby";
+import { FaDiscord } from "react-icons/fa";
 function HomeCard({ text, heading }) {
   return (
     <Flex
@@ -121,11 +126,49 @@ function IndexPage() {
           <Stack
             align={"center"}
             spacing={{ base: 8, md: 10 }}
-            py={{ base: 5, md: 7 }}
+            py={{ base: 10, md: 14 }}
             direction={{ base: "column", md: "row" }}
           >
             <HomeCard text={data.graphCmsAbout.mission} heading="Mission" />
             <HomeCard text={data.graphCmsAbout.vision} heading="Vision" />
+          </Stack>
+          <Stack
+            spacing={{ base: 5, md: 10 }}
+            direction={{ base: "column", md: "row" }}
+            p="auto"
+            align={"center"}
+          >
+            <Container>
+              <Heading
+                lineHeight={1.1}
+                fontWeight={600}
+                fontSize={{ base: "2xl", sm: "3xl", lg: "4xl" }}
+              >
+                Join our discord server and be a part of our empowering
+                community!
+              </Heading>
+
+              <Button
+                as="a"
+                href="https://discordapp.com"
+                bgColor="#7184D0"
+                bgGradient=""
+                size="xl"
+                my={10}
+              >
+                <FaDiscord size="30px" />
+              </Button>
+            </Container>
+
+            <Box position={"relative"} overflow={"hidden"}>
+              <Img
+                alt={"Hero Image"}
+                fit={"cover"}
+                align={"center"}
+                src={Saly_15}
+                width={"md"}
+              />
+            </Box>
           </Stack>
         </Box>
       )}

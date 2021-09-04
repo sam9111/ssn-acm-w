@@ -9,7 +9,7 @@ import {
   Stack,
   Link,
 } from "@chakra-ui/react";
-
+import { FiLinkedin } from "react-icons/fi";
 function GridItem(props) {
   const { name, image, position, link } = props;
   return (
@@ -17,12 +17,8 @@ function GridItem(props) {
       <Center flexDirection="column" p={"auto"}>
         <Avatar size="2xl" src={image} />
         {link ? (
-          <Link href={link} isExternal p={2}>
-            <img
-              src="https://img.icons8.com/ios-filled/50/000000/linkedin.png"
-              width="25px"
-              height="25px"
-            />
+          <Link href={link} isExternal pt={5}>
+            <FiLinkedin size="20px" />
           </Link>
         ) : null}
         <Text
