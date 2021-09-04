@@ -86,7 +86,7 @@ function ContactPage() {
           ) : null}
           <Heading
             lineHeight={1.1}
-            fontWeight={600}
+            fontWeight={700}
             fontSize={{ base: "3xl", sm: "4xl", lg: "5xl" }}
           >
             Get in touch!

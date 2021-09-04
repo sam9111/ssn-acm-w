@@ -48,7 +48,7 @@ export default function TeamGrid(props) {
       <Stack
         justify="center"
         align={"center"}
-        spacing={20}
+        spacing={{ base: 6, md: 20 }}
         direction={{ base: "column", md: "row" }}
       >
         {faculty.map((teamMember) => (
