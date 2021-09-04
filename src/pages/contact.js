@@ -109,24 +109,38 @@ function ContactPage() {
             fontSize={{ base: "md", sm: "lg", lg: "xl" }}
           >
             <Text as={"span"} position={"relative"}>
-              Our main email address is{" "}
+              Our email address is{" "}
               <Link href={`mailto:${CONTACT.email}`} textColor={"blue.300"}>
                 {CONTACT.email}
               </Link>
               .
             </Text>
-
-            <Flex direction={"row"}>
-              <Text fontWeight={"bold"}>Chairperson</Text>
-              <Text textDecor={"underline"} ml={10}>
-                {CONTACT.chairperson}
-              </Text>
-            </Flex>
-            <Flex direction={"row"}>
-              <Text fontWeight={"bold"}>Vice-Chairperson</Text>
-              <Text textDecor={"underline"} ml={10}>
-                {CONTACT.vicechairperson}
-              </Text>
+            <Flex>
+              <Flex direction={"column"}>
+                <Text fontWeight={"bold"}>
+                  {CONTACT.chairperson.name}
+                  <br />
+                  (Chairperson)
+                </Text>
+                <Text fontWeight={"bold"} mt={2}>
+                  {CONTACT.vicechairperson.name}
+                  <br />
+                  (Vice-Chairperson)
+                </Text>
+              </Flex>
+              <Flex direction={"column"}>
+                <Text textDecor={"underline"} ml={10} fontSize={{ base: "sm",md: "xl" }}>
+                  {CONTACT.chairperson.phone}
+                </Text>
+                <Text
+                  textDecor={"underline"}
+                  ml={10}
+                  mt={7}
+                  fontSize={{ base: "sm",md: "xl" }}
+                >
+                  {CONTACT.vicechairperson.phone}
+                </Text>
+              </Flex>
             </Flex>
           </Stack>
 
@@ -253,6 +267,12 @@ export default ContactPage;
 
 const CONTACT = {
   email: "acm-w@cse.ssn.edu.in",
-  chairperson: "+91 6383688836",
-  vicechairperson: "+91 8884406088",
+  chairperson: {
+    phone: "+916383688836",
+    name: "Likhitha Verma",
+  },
+  vicechairperson: {
+    phone: "+918884406088",
+    name: "Samyuktha Ganeshkumar",
+  },
 };

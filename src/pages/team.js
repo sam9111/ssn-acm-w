@@ -28,6 +28,7 @@ function TeamPage() {
               image {
                 url
               }
+              linkedin
             }
           }
         }

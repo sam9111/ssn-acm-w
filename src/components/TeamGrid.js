@@ -9,7 +9,7 @@ import {
   Stack,
   Link,
 } from "@chakra-ui/react";
-import { FiLinkedin } from "react-icons/fi";
+import { FaLinkedin } from "react-icons/fa";
 function GridItem(props) {
   const { name, image, position, link } = props;
   return (
@@ -18,7 +18,7 @@ function GridItem(props) {
         <Avatar size="2xl" src={image} />
         {link ? (
           <Link href={link} isExternal pt={5}>
-            <FiLinkedin size="20px" />
+            <FaLinkedin size="20px" />
           </Link>
         ) : null}
         <Text
@@ -57,6 +57,7 @@ export default function TeamGrid(props) {
             image={teamMember.image.url}
             position={teamMember.position}
             key={teamMember.id}
+            link={teamMember.linkedin}
           />
         ))}
       </Stack>

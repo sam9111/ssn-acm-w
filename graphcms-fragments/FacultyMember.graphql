@@ -8,6 +8,7 @@ fragment FacultyMember on FacultyMember {
   position
   currentMember
   year
+  linkedin
   createdBy {
     ... on User {
       remoteTypeName: __typename
