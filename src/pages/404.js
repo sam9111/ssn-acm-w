@@ -4,27 +4,22 @@ import { Link } from "gatsby";
 import Saly_17 from "../images/Saly-17.png";
 function NotFoundPage() {
   return (
-    <Box>
-      <Center h="25em">
-        <Text
-          fontWeight={"extrabold"}
-          fontSize={{ base: "lg", sm: "11em", lg: "15em" }}
-        >
+    <Box py={{ base: 10, md: 14 }} align={"center"}>
+      <Center>
+        <Text fontWeight={"extrabold"} fontSize={{ base: "10em", lg: "15em" }}>
           404
         </Text>
       </Center>
-      <Center h="0.1em">
-        <Text
-          fontWeight={"bold"}
-          fontSize={{ base: "lg", sm: "3em", lg: "5em" }}
-        >
+      <Center>
+        <Text fontWeight={"bold"} fontSize={{ base: "3em", lg: "5em" }}>
           Oops!
         </Text>
       </Center>
-      <Center h="10em">
+      <Center p={5}>
         <Text
           fontWeight={"normal"}
-          fontSize={{ base: "md", sm: "lg", lg: "xl" }}
+          fontSize={{ base: "md", lg: "xl" }}
+          align={"center"}
         >
           Hey there! Looks like you wandered and got lost!
         </Text>
@@ -38,9 +33,9 @@ function NotFoundPage() {
           </Link>
         </Button>
       </Center>
-      <Center>
-        <Img alt={"Wanderer"} fit={"cover"} align={"center"} src={Saly_17} />
-      </Center>
+      <Box position={"relative"} overflow={"hidden"} width={"full"}>
+        <Img alt={"Wanderer"} fit={"full"} src={Saly_17} />
+      </Box>
     </Box>
   );
 }
