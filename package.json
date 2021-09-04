@@ -22,7 +22,6 @@
     "@emotion/react": "^11.4.0",
     "@emotion/styled": "^11.3.0",
     "@fontsource/josefin-sans": "^4.5.0",
-    "babel-eslint": "^10.1.0",
     "emailjs-com": "^3.2.0",
     "formik": "^2.2.9",
     "framer-motion": "^4.1.17",
