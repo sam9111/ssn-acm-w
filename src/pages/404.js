@@ -1,54 +1,41 @@
 import * as React from "react";
-import { Link } from "gatsby";
-
-// styles
-const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-};
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-};
-
-const paragraphStyles = {
-  marginBottom: 48,
-};
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-};
-
-// markup
-const NotFoundPage = () => {
-  return (
-    <main style={pageStyles}>
-      <title>Not found</title>
-      <h1 style={headingStyles}>Page not found</h1>
-      <p style={paragraphStyles}>
-        Sorry{" "}
-        <span role="img" aria-label="Pensive emoji">
-          😔
-        </span>{" "}
-        we couldn’t find what you were looking for.
-        <br />
-        {process.env.NODE_ENV === "development" ? (
-          <>
-            <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
-            <br />
-          </>
-        ) : null}
-        <br />
-        <Link to="/">Go home</Link>.
-      </p>
-    </main>
-  );
-};
-
+import {Img,Box,Center,Text,Container,Button} from "@chakra-ui/react";
+import {Link} from "gatsby";
+;
+import Saly_17 from "../images/Saly-17.png";
+function NotFoundPage() {
+return  ( <Box>
+<Center h="25em"><Text
+        fontWeight={"extrabold"}
+        fontSize={{ base: "lg", sm: "11em", lg: "15em" }}
+        >404</Text>
+        </Center>
+        <Center h="0.1em">
+        <Text fontWeight={"bold"}
+        fontSize={{base: "lg" , sm: "3em" , lg:"5em"}}
+        >Oops!</Text>
+        </Center>
+        <Center h="10em">
+        <Text fontWeight={"normal"}
+        fontSize={{base: "lg" , sm: "2em" , lg:"3em"}}
+        >Hey there! Looks like you wandered and got lost!</Text>
+        </Center>
+        <Center >
+          <Button size="lg" height="3em" colorScheme="#000000">
+      <Link to="/"><Text fontSize={{base: "lg" , sm: "1em" , lg:"2em"}}
+        >Go Back!</Text></Link>
+      </Button>
+    </Center>
+        <Center>
+          <Img
+            alt={"Wanderer"}
+            fit={"cover"}
+            align={"center"}
+            src={Saly_17}
+          />
+          
+        </Center>
+</Box>
+);
+}
 export default NotFoundPage;
