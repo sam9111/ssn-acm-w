@@ -53,13 +53,13 @@ export default function Footer() {
       >
         <Stack direction={"row"} spacing={6}>
           <SocialButton label={"Linkedin"} href={SOCIAL_MEDIA.LINKEDIN}>
-            <FiLinkedin size="4x" />
+            <FiLinkedin size="2x" />
           </SocialButton>
           <SocialButton label={"YouTube"} href={SOCIAL_MEDIA.YOUTUBE}>
-            <FiYoutube size="4x" />
+            <FiYoutube size="2x" />
           </SocialButton>
           <SocialButton label={"Instagram"} href={SOCIAL_MEDIA.INSTAGRAM}>
-            <FiInstagram size="4x" />
+            <FiInstagram size="2x" />
           </SocialButton>
         </Stack>
         <Text>SSN ACM - W Student Chapter © 2021</Text>
