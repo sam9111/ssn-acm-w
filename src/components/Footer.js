@@ -21,6 +21,7 @@ const SocialButton = ({ children, label, href }) => {
       cursor={"pointer"}
       as={"a"}
       href={href}
+      target={"_blank"}
       display={"inline-flex"}
       alignItems={"center"}
       justifyContent={"center"}
@@ -51,13 +52,13 @@ export default function Footer() {
         align={{ base: "center", md: "center" }}
       >
         <Stack direction={"row"} spacing={6}>
-          <SocialButton label={"Linkedin"} href={"#"}>
+          <SocialButton label={"Linkedin"} href={SOCIAL_MEDIA.LINKEDIN}>
             <FiLinkedin size="4x" />
           </SocialButton>
-          <SocialButton label={"YouTube"} href={"#"}>
+          <SocialButton label={"YouTube"} href={SOCIAL_MEDIA.YOUTUBE}>
             <FiYoutube size="4x" />
           </SocialButton>
-          <SocialButton label={"Instagram"} href={"#"}>
+          <SocialButton label={"Instagram"} href={SOCIAL_MEDIA.INSTAGRAM}>
             <FiInstagram size="4x" />
           </SocialButton>
         </Stack>
@@ -66,3 +67,9 @@ export default function Footer() {
     </Box>
   );
 }
+
+const SOCIAL_MEDIA = {
+  LINKEDIN: "https://www.linkedin.com/company/ssn-acm-w-student-chapter",
+  YOUTUBE: "https://www.youtube.com/channel/UCd6XWQr408WoWJFThGfychw",
+  INSTAGRAM: "https://instagram.com/ssnacmw?utm_medium=copy_link",
+};

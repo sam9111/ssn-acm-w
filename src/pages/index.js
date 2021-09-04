@@ -150,11 +150,12 @@ function IndexPage() {
 
               <Button
                 as="a"
-                href="https://discordapp.com"
+                href={DISCORD}
                 bgColor="#7184D0"
                 bgGradient=""
                 size="xl"
                 my={10}
+                target="_blank"
               >
                 <FaDiscord size="30px" />
               </Button>
@@ -176,3 +177,5 @@ function IndexPage() {
   );
 }
 export default IndexPage;
+
+const DISCORD = "https://discord.gg/nNgXEapaug";

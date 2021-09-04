@@ -89,10 +89,13 @@ function ContactPage() {
             fontWeight={600}
             fontSize={{ base: "3xl", sm: "4xl", lg: "5xl" }}
           >
-            <Text as={"span"} position={"relative"}>
-              Get in touch!
+            Get in touch!
+            <br />
+            <Text as={"span"} position={"relative"} fontSize={"xl"}>
+              We are always happy to hear from you.
             </Text>
           </Heading>
+
           <Stack
             bg={useColorModeValue("white", "gray.800")}
             position={"relative"}
@@ -106,12 +109,9 @@ function ContactPage() {
             fontSize={{ base: "md", sm: "lg", lg: "xl" }}
           >
             <Text as={"span"} position={"relative"}>
-              We are always happy to hear from you.
-              <br />
-              <br />
               Our main email address is{" "}
-              <Link href="mailto:acm-w@cse.ssn.edu.in" textColor={"blue.300"}>
-                acm-w@cse.ssn.edu.in
+              <Link href={`mailto:${CONTACT.email}`} textColor={"blue.300"}>
+                {CONTACT.email}
               </Link>
               .
             </Text>
@@ -119,15 +119,13 @@ function ContactPage() {
             <Flex direction={"row"}>
               <Text fontWeight={"bold"}>Chairperson</Text>
               <Text textDecor={"underline"} ml={10}>
-                {" "}
-                +91 6383688836
+                {CONTACT.chairperson}
               </Text>
             </Flex>
             <Flex direction={"row"}>
               <Text fontWeight={"bold"}>Vice-Chairperson</Text>
               <Text textDecor={"underline"} ml={10}>
-                {" "}
-                +91 8884406088
+                {CONTACT.vicechairperson}
               </Text>
             </Flex>
           </Stack>
@@ -252,3 +250,9 @@ function ContactPage() {
 }
 
 export default ContactPage;
+
+const CONTACT = {
+  email: "acm-w@cse.ssn.edu.in",
+  chairperson: "+91 6383688836",
+  vicechairperson: "+91 8884406088",
+};
