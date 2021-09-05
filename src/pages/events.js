@@ -57,14 +57,6 @@ function Events() {
                     fontSize={{ base: "sm", md: "xl", lg: "2xl" }}
                     fontWeight="bold"
                   >
-                    Past
-                  </Text>
-                </Tab>
-                <Tab>
-                  <Text
-                    fontSize={{ base: "sm", md: "xl", lg: "2xl" }}
-                    fontWeight="bold"
-                  >
                     {new Date().getFullYear() +
                       " - " +
                       (new Date().getFullYear() + 1)}
@@ -80,13 +72,6 @@ function Events() {
                 </Tab>
               </TabList>
               <TabPanels>
-                <TabPanel>
-                  <CommonCardLayout
-                    events={data.allGraphCmsEvent.nodes.filter(
-                      (event) => event.timeCategory == "Past"
-                    )}
-                  />
-                </TabPanel>
                 <TabPanel>
                   <CommonCardLayout
                     events={data.allGraphCmsEvent.nodes.filter(

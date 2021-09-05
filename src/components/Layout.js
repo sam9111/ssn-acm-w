@@ -8,7 +8,7 @@ export default function Layout({ children }) {
   return (
     <Box>
       <Header />
-      <Box bg={useColorModeValue("#F0FAFF", "gray.900")}>
+      <Box bg={useColorModeValue("#e3f4fc", "gray.900")}>
         <Container maxW={"7xl"}>{children}</Container>
       </Box>
       <Footer />

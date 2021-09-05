@@ -6,6 +6,11 @@ const Button = {
   },
   // Two sizes: sm and md
   sizes: {
+    sm: {
+      fontSize: "sm",
+      px: 5,
+      py: 3,
+    },
     md: {
       fontSize: "md",
       px: 7, // <-- these values are tokens from the design system
