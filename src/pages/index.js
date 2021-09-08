@@ -156,8 +156,14 @@ function IndexPage() {
                 size="xl"
                 my={10}
                 target="_blank"
+                px={4}
+                py={2}
               >
-                <FaDiscord size="30px" />
+                Join
+                <Box pl={2}>
+                  {" "}
+                  <FaDiscord size="30px" />{" "}
+                </Box>
               </Button>
             </Container>
 
