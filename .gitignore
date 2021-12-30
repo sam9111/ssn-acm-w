@@ -1,4 +1,6 @@
 node_modules/
 .cache/
 public
+public/
 .env
+.DS_Store
