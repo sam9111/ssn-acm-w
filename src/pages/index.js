@@ -156,8 +156,8 @@ function IndexPage() {
                 size="xl"
                 my={10}
                 target="_blank"
-                px={4}
-                py={2}
+                px={8}
+                py={4}
               >
                 Join
                 <Box pl={2}>

@@ -13,6 +13,7 @@ import {
   Link,
   Spacer,
   Img,
+  Button,
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon, ChevronDownIcon } from "@chakra-ui/icons";
 import { Link as ReachLink } from "gatsby";
@@ -58,6 +59,18 @@ export default function Header() {
             <DesktopNav />
           </Flex>
         </Flex>
+        <Button
+          as="a"
+          href={ACM_MEMBER}
+          bgGradient={"linear-gradient(to-r,blue.300,blue.500,blue.700,black)"}
+          size="xl"
+          m={8}
+          target="_blank"
+          px={8}
+          py={4}
+        >
+          Join Us @ ACM
+        </Button>
         <Box right="20px" top="20px">
           <ThemeToggle />
         </Box>
@@ -174,3 +187,6 @@ const NAV_ITEMS = [
     tab: "contact",
   },
 ];
+
+const ACM_MEMBER =
+  "https://services.acm.org/public/qj/proflevel/proflevel_control.cfm?level=3&country=India&form_type=Student&promo=ACMMSDEPT&pay=DD";
