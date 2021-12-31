@@ -1,16 +1,12 @@
-fragment Asset on Asset {
+fragment ScheduledOperation on ScheduledOperation {
   stage
-  locale
   remoteId: id
-  createdAt(variation: COMBINED)
-  updatedAt(variation: COMBINED)
-  publishedAt(variation: COMBINED)
-  handle
-  fileName
-  height
-  width
-  size
-  mimeType
+  createdAt
+  updatedAt
+  publishedAt
+  description
+  errorMessage
+  rawPayload
   createdBy {
     ... on User {
       remoteTypeName: __typename
@@ -32,40 +28,50 @@ fragment Asset on Asset {
       stage
     }
   }
-  teamMemberImageTeamMember {
+  release {
+    ... on ScheduledRelease {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  status
+  affectedDocuments {
+    ... on About {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+    ... on Asset {
+      remoteTypeName: __typename
+      remoteId: id
+      locale
+      stage
+    }
+    ... on BlogPost {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+    ... on Event {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+    ... on FacultyMember {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+    ... on SocialMedia {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
     ... on TeamMember {
       remoteTypeName: __typename
       remoteId: id
       stage
     }
   }
-  imageFacultyMember {
-    ... on FacultyMember {
-      remoteTypeName: __typename
-      remoteId: id
-      stage
-    }
-  }
-  coverImageBlogPost {
-    ... on BlogPost {
-      remoteTypeName: __typename
-      remoteId: id
-      stage
-    }
-  }
-  coverImageEvent {
-    ... on Event {
-      remoteTypeName: __typename
-      remoteId: id
-      stage
-    }
-  }
-  scheduledIn {
-    ... on ScheduledOperation {
-      remoteTypeName: __typename
-      remoteId: id
-      stage
-    }
-  }
-  url
 }

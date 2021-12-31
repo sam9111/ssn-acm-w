@@ -1,14 +1,15 @@
-fragment FacultyMember on FacultyMember {
+fragment ScheduledRelease on ScheduledRelease {
   stage
   remoteId: id
   createdAt
   updatedAt
   publishedAt
-  name
-  position
-  currentMember
-  year
-  linkedin
+  title
+  description
+  errorMessage
+  isActive
+  isImplicit
+  releaseAt
   createdBy {
     ... on User {
       remoteTypeName: __typename
@@ -30,19 +31,12 @@ fragment FacultyMember on FacultyMember {
       stage
     }
   }
-  image {
-    ... on Asset {
-      remoteTypeName: __typename
-      remoteId: id
-      locale
-      stage
-    }
-  }
-  scheduledIn {
+  operations {
     ... on ScheduledOperation {
       remoteTypeName: __typename
       remoteId: id
       stage
     }
   }
+  status
 }

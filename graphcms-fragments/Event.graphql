@@ -38,4 +38,11 @@ fragment Event on Event {
     }
   }
   timeCategory
+  scheduledIn {
+    ... on ScheduledOperation {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
 }

@@ -6,6 +6,8 @@ fragment SocialMedia on SocialMedia {
   publishedAt
   platform
   link
+  email
+  contactNumber
   createdBy {
     ... on User {
       remoteTypeName: __typename
@@ -22,6 +24,13 @@ fragment SocialMedia on SocialMedia {
   }
   publishedBy {
     ... on User {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+  }
+  scheduledIn {
+    ... on ScheduledOperation {
       remoteTypeName: __typename
       remoteId: id
       stage

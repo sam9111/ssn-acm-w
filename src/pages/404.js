@@ -4,7 +4,7 @@ import { Link } from "gatsby";
 import Saly_17 from "../images/Saly-17.png";
 function NotFoundPage() {
   return (
-    <Box py={{ base: 10, md: 14 }} align={"center"}>
+    <Box py={{ base: 5, md: 7 }} align={"center"}>
       <Center>
         <Text fontWeight={"extrabold"} fontSize={{ base: "10em", lg: "15em" }}>
           404
@@ -15,16 +15,16 @@ function NotFoundPage() {
           Oops!
         </Text>
       </Center>
-      <Center p={5}>
+      <Center p={10}>
         <Text
           fontWeight={"normal"}
-          fontSize={{ base: "md", lg: "xl" }}
+          fontSize={{ base: "1em", lg: "2em" }}
           align={"center"}
         >
           Hey there! Looks like you wandered and got lost!
         </Text>
       </Center>
-      <Center>
+      <Center p={10}>
         <Button size="lg" height="3em" colorScheme="#000000">
           <Link to="/">
             <Text fontSize={{ base: "lg", sm: "1em", lg: "2em" }}>
