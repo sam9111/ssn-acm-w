@@ -40,6 +40,14 @@ function BlogPage() {
               link="Check it Out!"
               cardType="blog"
             /> */}
+            <Text
+              fontWeight={500}
+              fontSize={{ base: "lg", sm: "xl", lg: "2xl" }}
+              align={"center"}
+            >
+              Impressive blogs by our students are in the making! <br></br> Do
+              contact us if you want to see your blog here!
+            </Text>
           </Stack>
         </Stack>
       </Stack>
