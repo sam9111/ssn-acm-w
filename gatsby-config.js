@@ -16,5 +16,15 @@ module.exports = {
         downloadLocalImages: true,
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: "SSn ACM-W",
+        short_name: "SSNACMW",
+        start_url: "/",
+        display: "standalone",
+        icon: "src/images/acmw_logo.png",
+      },
+    },
   ],
 };
