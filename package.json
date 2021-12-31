@@ -29,11 +29,13 @@
     "gatsby": "^4.4.0",
     "gatsby-plugin-gatsby-cloud": "^4.0.0",
     "gatsby-plugin-image": "^1.4.0",
+    "gatsby-plugin-react-helmet": "^5.4.0",
     "gatsby-plugin-wrap-pages": "^1.0.4",
     "gatsby-source-graphcms": "^2.6.0",
     "gatsby-source-graphql": "^3.11.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-helmet": "^6.1.0",
     "react-icons": "^4.2.0"
   },
   "devDependencies": {
