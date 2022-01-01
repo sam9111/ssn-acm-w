@@ -4,6 +4,7 @@ module.exports = {
     title: "ssn-acm-w",
   },
   plugins: [
+    "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-gatsby-cloud",
     "@chakra-ui/gatsby-plugin",
