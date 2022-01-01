@@ -36,6 +36,7 @@ export default function CommonCard({ title, image, body, link, cardType }) {
         zIndex={1}
         borderRadius={"3xl"}
         boxShadow={colorMode === "light" ? "2xl" : "dark-lg"}
+        onClick={onOpen}
       >
         <Box rounded={"3xl"} pos={"relative"} height={"230px"}>
           <Img
