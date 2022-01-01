@@ -31,7 +31,6 @@ export default function CommonCard({ title, image, body, link, cardType }) {
         maxW={"330px"}
         w={"full"}
         bg={useColorModeValue("white", "gray.800")}
-        boxShadow={"2xl"}
         rounded={"lg"}
         pos={"relative"}
         zIndex={1}
@@ -63,9 +62,11 @@ export default function CommonCard({ title, image, body, link, cardType }) {
                 </Button>
                 <Modal isOpen={isOpen} size="3xl" onClose={onClose}>
                   <ModalOverlay />
+
                   <ModalContent>
-                    <ModalHeader>{title}</ModalHeader>
                     <ModalCloseButton />
+                    <ModalHeader p={8}>{title}</ModalHeader>
+
                     <ModalBody>
                       <div style={{ fontSize: "1.2em" }}>{body}</div>
                       <Img
