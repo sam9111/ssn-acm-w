@@ -18,6 +18,13 @@ import { graphql, StaticQuery } from "gatsby";
 import CommonCardLayout from "../components/CommonCardLayout";
 import Saly_13 from "../images/Saly-13.png";
 
+function presentYear() {
+  if (new Date().getMonth() > 5) {
+    return new Date().getFullYear();
+  } else {
+    return new Date().getFullYear() - 1;
+  }
+}
 function Events() {
   return (
     <StaticQuery
@@ -57,9 +64,7 @@ function Events() {
                     fontSize={{ base: "sm", md: "xl", lg: "2xl" }}
                     fontWeight="bold"
                   >
-                    {new Date().getFullYear() +
-                      " - " +
-                      (new Date().getFullYear() + 1)}
+                    {presentYear() + " - " + (presentYear() + 1)}
                   </Text>
                 </Tab>
                 <Tab>

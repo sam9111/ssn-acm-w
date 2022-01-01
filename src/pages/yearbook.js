@@ -19,9 +19,17 @@ import { graphql, StaticQuery } from "gatsby";
 
 import TeamGrid from "../components/TeamGrid";
 
+function presentYear() {
+  if (new Date().getMonth() > 5) {
+    return new Date().getFullYear();
+  } else {
+    return new Date().getFullYear() - 1;
+  }
+}
+
 function generate_years() {
   const years = [];
-  const yearNow = new Date().getFullYear();
+  const yearNow = presentYear();
   for (var i = 0; i < yearNow - 2019 + 1; i++) {
     years.push(yearNow - i);
   }
