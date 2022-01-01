@@ -116,9 +116,21 @@ function IndexPage() {
                   bottom: 1,
                   left: 0,
                 }}
+                color="gray.600"
               >
-                {data.graphCmsAbout.tagline}
+                "{data.graphCmsAbout.tagline}"
               </Text>
+
+              <Link as="a" href={ACM_MEMBER} target="_blank" px={12} py={4}>
+                <Text
+                  fontSize={{ base: "xl", sm: "2xl", lg: "3xl" }}
+                  fontWeight={700}
+                  as="u"
+                >
+                  Join Us @ ACM-W
+                </Text>
+              </Link>
+
               <HomeCard text={data.graphCmsAbout.about} />
             </Stack>
           </Stack>
@@ -156,7 +168,7 @@ function IndexPage() {
                 size="xl"
                 my={10}
                 target="_blank"
-                px={8}
+                px={12}
                 py={4}
               >
                 Join
@@ -185,3 +197,5 @@ function IndexPage() {
 export default IndexPage;
 
 const DISCORD = "https://discord.gg/nNgXEapaug";
+const ACM_MEMBER =
+  "https://services.acm.org/public/qj/proflevel/proflevel_control.cfm?level=3&country=India&form_type=Student&promo=ACMMSDEPT&pay=DD";
