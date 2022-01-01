@@ -121,14 +121,13 @@ function IndexPage() {
                 "{data.graphCmsAbout.tagline}"
               </Text>
 
-              <Link as="a" href={ACM_MEMBER} target="_blank" px={12} py={4}>
-                <Text
+              <Link as="a" href={ACM_MEMBER} target="_blank" px={12} py={4} style={{ textDecoration: "none" }}>
+                <Button style={{ padding: "30px" }}><Text
                   fontSize={{ base: "xl", sm: "2xl", lg: "3xl" }}
-                  fontWeight={700}
-                  as="u"
+                  fontWeight={600}
                 >
                   Join Us @ ACM-W
-                </Text>
+                </Text></Button>
               </Link>
 
               <HomeCard text={data.graphCmsAbout.about} />
