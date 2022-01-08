@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/ssnwhosting/git_public_html/
+    - /bin/cp -R * $DEPLOYPATH
