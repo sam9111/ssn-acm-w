@@ -10,11 +10,6 @@
 ## 🚀 Quick start
 
 1.  **Clone repo.**
-
-    ```shell
-        git clone https://github.com/sam9111/ssn-acm-w.git
-    ```
-
 2.  **Start developing.**
 
     Navigate into your new site’s directory and start it up.
