@@ -54,9 +54,9 @@ export default function TeamGrid(props) {
         {faculty.map((teamMember) => (
           <GridItem
             name={teamMember.name}
-            image={teamMember.image}
+            image={teamMember.image.url}
             position={teamMember.position}
-            key={teamMember.name}
+            key={teamMember.id}
             link={teamMember.linkedin}
           />
         ))}
@@ -65,7 +65,7 @@ export default function TeamGrid(props) {
         {team.map((teamMember) => (
           <GridItem
             name={teamMember.name}
-            image={teamMember.image}
+            image={teamMember.image.url}
             position={teamMember.position}
             key={teamMember.id}
             link={teamMember.linkedin}
